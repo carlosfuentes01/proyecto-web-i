@@ -14,7 +14,7 @@ function resolver() {
     else if (seleccion == 2) {
         if (N1 > N2) {
             Resultado = N1 - N2;
-            document.querySelector("#mostrad").innerHTML= "El resultado de la resta es " +Resultado;
+            document.querySelector("#mostrad").innerHTML= "El resultado de la resta eas " +Resultado;
         }
         else {
             Resultado = N2 - N1;
