@@ -1,0 +1,164 @@
+* {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 550;
+    font-style: normal;
+    
+}
+
+
+body{
+   
+    background: linear-gradient(45deg, var(--Ver_Oscuro),var(--Ver_Claro), #ffffff);
+    animation: cambiar 8s infinite;
+    background-size: 300% 300%;
+    margin: 0px 40px 0px 40px;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+@keyframes cambiar{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    } 
+    100%{
+        background-position: 0 50%;
+    }
+}
+:root{
+    --degradado:linear-gradient(45deg, var(--Ver_Oscuro),var(--Ver_Claro));
+    --Ver_Oscuro: #5BB687;
+    --Ver_Claro: #B4EAA9;
+    --Azul_Oscuro: #110140;
+    --Blanco: #ffff;
+}
+.Div_Blanco{
+  
+    transition: ease 3s;
+    align-content: center;
+    background-color: #ffffff;
+    width: 100%;
+    height: 52vh;
+    border-radius: 16% 16% 0 0;  
+}
+img{
+    width: 0;
+    flex-grow: 1;
+    border-radius: 50%;
+}
+
+.Div_Negro_Inside_Blanco{
+    
+    transition: ease 2s;
+   flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 69vh;
+    border-radius: 42% 42% 0px 0px ;
+}
+
+.Div_logo_Inside_Negro{
+    
+display: flex;
+
+width: 150px;
+height: 150px;
+
+margin-bottom: 1000px;
+}
+.Div_login_Inside_Negro{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    margin-bottom: 410px;
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    background-color: aliceblue;
+}
+
+.Div_Contenedores_Inside_Negro{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.Div_Registros_Inside_Contenedores{
+    font-size: 25px;
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   position: relative;
+
+}
+.a_Crear_Inside_Login{
+    font-weight: 600;
+    color: var(--Ver_Oscuro);
+    
+    text-align: right;
+    font-size: 20px;
+    margin-right: 30px;
+}
+.Input_Inside_Registros:focus{
+    border-color: var(--Ver_Oscuro);
+    box-shadow: 0 0 8px 0 var(--Ver_Oscuro);
+
+}
+.Div_Registros_Inside_Contenedores input{
+    padding-left: 30px;
+}
+
+.Input_Inside_Registros{
+    outline: none;
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+    height: 20px;
+}
+
+.Div_Registros_Inside_Contenedores i{
+    position: absolute;
+    top:102px;
+    left: 50px;
+    padding: 1px 4px;
+    
+}
+
+
+.Div_Registros_Inside_Contenedores .Input_Inside_Registros:focus + i{
+color: var(--Ver_Oscuro);
+}
+
+.Div_Registrarse_Inside_Negro{
+    position: absolute;
+    color: #000;
+    margin-top: 100px;
+    padding: 15px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border: 3px solid;
+    border-radius: 25px;
+    border-color: var(--Azul_Oscuro);
+    background: var(--degradado);
+    cursor: pointer;
+    transition: ease .5s;
+}
+.Div_Registrarse_Inside_Negro:hover{
+    padding-left: 85px;
+    padding-right: 85px;
+    opacity: 80%;
+    background-color: var(--Ver_Claro);
+}
+.Div_Registrarse_Inside_Negro>a{
+    font-size: 20px;
+    color: var(--Azul_Oscuro);
+    text-decoration: none;
+}

@@ -1,0 +1,171 @@
+
+* {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 550;
+    font-style: normal;
+}
+
+
+body{
+    background: linear-gradient(45deg, var(--Ver_Oscuro),var(--Ver_Claro), #ffffff);
+    animation: cambiar 8s infinite;
+    background-size: 300% 300%;
+    margin: 0px 40px 0px 40px;
+    padding: 0;
+    height: 100vh;
+    
+}
+@keyframes cambiar{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    } 
+    100%{
+        background-position: 0 50%;
+    }
+}
+:root{
+    --Ver_Oscuro: #5BB687;
+    --Ver_Claro: #B4EAA9;
+    --Azul_Oscuro: #110140;
+    --Blanco: #ffff;
+}
+.Div_Blanco{
+    
+    transition: ease 3s;
+    align-content: center;
+    background-color: #ffffff;
+    width: 100%;
+    height: 52vh;
+    border-radius: 0px 0px 16% 16%;  
+}
+img{
+    width: 0;
+    flex-grow: 1;
+    border-radius: 50%;
+}
+
+.Div_Negro_Inside_Blanco{
+    
+    transition: ease 2s;
+   flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 69vh;
+    border-radius: 0px 0px 42% 42%;
+}
+
+.Div_logo_Inside_Negro{
+    
+display: flex;
+
+width: 150px;
+height: 150px;
+
+margin-bottom: 30px;
+}
+.Div_login_Inside_Negro{
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    margin-top: 600px;
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    background-color: aliceblue;
+}
+
+.Div_Contenedores_Inside_Negro{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 600px;
+    margin: 15px;
+   
+
+}
+
+.Div_Registros_Inside_Contenedores{
+    display: flex;
+   flex-direction: column;
+   width: 50%;
+   position: relative;
+
+}
+.Input_Inside_Registros:focus{
+    border-color: var(--Ver_Oscuro);
+    box-shadow: 0 0 8px 0 var(--Ver_Oscuro);
+
+}
+.Div_Registros_Inside_Contenedores input{
+    padding-left: 30px;
+}
+
+.Input_Inside_Registros{
+    outline: none;
+    padding: 4px;
+    width: 80%;
+    border-radius: 5px;
+    height: 20px;
+}
+.Div_Registros_Inside_Contenedores i{
+    position: absolute;
+    top:63px;
+    padding: 1px 4px;
+    
+}
+
+
+.Div_Registros_Inside_Contenedores .Input_Inside_Registros:focus + i{
+color: var(--Ver_Oscuro);
+}
+#i_rebelde{
+    right: 302px;
+}
+#i_rebelde2{
+    top: 69px;
+    left: 51px;
+}
+#tipo{
+  display: inline;
+    
+}
+#id_Input_NºDocumento{
+    width: 60%;
+}
+#id_Input_Documento{
+    
+    height: 25px;
+    width: 15%;
+}
+#id_Div_Contraseña_Inside_Contenedores{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+.Div_Registrarse_Inside_Negro{
+    position: absolute;
+    color: #000;
+    margin-top: 1080px;
+    padding: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: 3px solid;
+    border-radius: 25px;
+    border-color: var(--Azul_Oscuro);
+    background-color: var(--Ver_Oscuro);
+    cursor: pointer;
+    transition: ease .5s;
+}
+.Div_Registrarse_Inside_Negro:hover{
+    padding-left: 75px;
+    padding-right: 75px;
+    opacity: 80%;
+    background-color: var(--Ver_Claro);
+}
