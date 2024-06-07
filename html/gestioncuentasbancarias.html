@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gestion cuentas bancarias</title>
-    <script src="../js/contenido.js"></script>
+    <script src="../js/gestion_cuentas_bancarias.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
                 <img src="../recursos/imagenes/logo_cetus.png" height="50px" alt="">
             </div>
 
-            <h2 id="nombre_usuario_inside_div_superior_derecha_inside_div_superior">nombre de el usuario</h2>
+            <h2 id="nombre_usuario_inside_div_superior_derecha_inside_div_superior"></h2>
 
             <button onclick="ingresar_pagina_consejos()"><b>Menu Principal</b></button>
                
@@ -69,9 +69,42 @@
             </div>
         </div>
     </div>
-
-   <script>
-        gestion_bancaria()
-   </script>
+    <dialog id="modal_crear">
+        <h2>añadir cuenta</h2>
+<input type="text" id="input_numero_cuenta_modal_crear" placeholder="numero cuenta">
+<select name="" id="input_banco_cuenta_modal_crear">
+    <option value="Davivienda" selected>Davivienda</option>
+    <option value="Bancolombia">Bancolombia</option>
+    <option value="Bancos de Colombia">Bancos de Colombia</option>
+    <option value="Banco Agrario de Colombia">Banco Agrario de Colombia</option>
+    <option value="Banco AV Villas">Banco AV Villas</option>
+    <option value="Banco Caja Social">Banco Caja Social</option>
+    <option value="Banco de Occidente (Colombia)">Banco de Occidente (Colombia)</option>
+    <option value="Banco Granahorrar">Banco Granahorrar</option>
+    <option value="Banco Itaú">Banco Itaú</option>
+    <option value="Banco Pichincha">Banco Pichincha</option>
+    <option value="Banco Popular (Colombia)">Banco Popular (Colombia)</option>
+    <option value="BBVA (Colombia)">BBVA (Colombia)</option>
+    <option value="Banco de Bogotá">Banco de Bogotá</option>
+    <option value="Citi Colombia">Citi Colombia</option>
+    <option value="Colpatria">Colpatria</option>
+    <option value="Corficolombiana">Corficolombiana</option>
+    <option value="Banco Falabella">Banco Falabella</option>
+    <option value="Fondo Nacional del Ahorro">Fondo Nacional del Ahorro</option>
+    <option value="GNB Sudameris">GNB Sudameris</option>
+    <option value="Lulo Bank">Lulo Bank</option>
+    <option value="Nubank">Nubank</option>
+</select>
+<select name="" id="input_tipo_cuenta_modal_crear">
+    <option value="ahorro" selected>Ahorro</option>
+    <option value="corriente">Corriente</option>
+    <option value="inversion">Inversión</option>
+</select>
+<input type="number" placeholder="saldo" id="input_saldo_modal_crear">
+<select name="" id="input_estado_modal_crear">
+    <option value="activa" selected>activa</option>
+</select>
+<input type="text">
+    </dialog>
 </body>
 </html>
