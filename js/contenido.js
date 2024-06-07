@@ -1,4 +1,4 @@
-
+var num_cuenta_actual;
 function identificar_usuario() {
     var correo = document.getElementById("id_Input_Mail");
      var password = document.getElementById("id_Input_Password").value;
@@ -15,8 +15,7 @@ function identificar_usuario() {
                        
                             entro=true
                             administrador=lista_usuarios[i].admin
-                            console.log(administrador+" es administrador")
-                            console.log(lista_usuarios[i].email+"cuenta admin")
+                             num_cuenta_actual=i;
                              break; 
                         }
                         
@@ -41,4 +40,10 @@ function identificar_usuario() {
     
         
     }
-
+function gestion_bancaria() {
+    var nombre_usuario=document.getElementById("nombre_usuario_inside_div_superior_derecha_inside_div_superior")
+    var lista_usuarios=JSON.parse(localStorage.getItem("json_usuario" || "[]"))
+    
+    //colocar el nombre de usuario
+    
+}

@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gestion cuentas bancarias</title>
+    <script src="../js/contenido.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
                 <img src="../recursos/imagenes/logo_cetus.png" height="50px" alt="">
             </div>
 
-            <h2>nombre de el usuario</h2>
+            <h2 id="nombre_usuario_inside_div_superior_derecha_inside_div_superior">nombre de el usuario</h2>
 
             <button onclick="ingresar_pagina_consejos()"><b>Menu Principal</b></button>
                
@@ -43,12 +44,34 @@
             </div>
         </div>
 
-        <div>
-
+        <div id="div_contenedor_general_cuentas_bancarias">
+            <div>
+                <button id="boton_vincular_cuenta_inside_div_contenedor_general">Vincular cuenta</button>
+                <button id="boton_desvincular_cuenta_inside_div_contenedor_general">Desvincular cuenta</button>
+                <button id="boton_actualizar_cuenta_inside_div_contenedor_general">Actualizar cuenta</button>
+            </div>
+            <div>
+                <table border="1" id="tabla_gestion_cuentas_bancarias">
+                    <caption>
+                        <th>
+                            <td>
+                                Numero cuenta
+                            </td>
+                            <td>Nombre_banco</td>
+                            <td>Tipo</td>
+                            <td>Estado</td>
+                            <td>Saldo</td>
+                            <td>Fecha apertura</td>
+                            <td>Descripción</td>
+                        </th>
+                    </caption>
+                </table>
+            </div>
         </div>
-        
     </div>
 
-   
+   <script>
+        gestion_bancaria()
+   </script>
 </body>
 </html>

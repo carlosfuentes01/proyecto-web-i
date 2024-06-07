@@ -103,6 +103,9 @@ margin-bottom: 30px;
 .Div_Registros_Inside_Contenedores input{
     padding-left: 30px;
 }
+.Div_Registros_Inside_Contenedores > select{
+    height: 30px;
+}
 
 .Input_Inside_Registros{
     outline: none;

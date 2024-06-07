@@ -1,6 +1,6 @@
 
-function registrar_usuario() {
- 
+function proceso_registrar() {
+
   let usuario_existente=false
      email = document.getElementById("id_Input_Email").value;
      nombre = document.getElementById("id_Input_Name").value;
@@ -19,7 +19,7 @@ function registrar_usuario() {
 console.log(tipo+"tipo documento")
 if (email==""||nombre==""||apellido==""||numero_documento==""||password=="") {
   
-      alert("llene los espacios vacios")
+      alert("Llene los espacios vacios")
 
 }else{
   var lista_usuarios=JSON.parse(localStorage.getItem("json_usuario")|| "[]")
@@ -29,11 +29,13 @@ if (email==""||nombre==""||apellido==""||numero_documento==""||password=="") {
       }
   }
   if (usuario_existente) {
-    alert("usuario ya existente")
+    alert("Usuario ya existente")
   }else{
     var crearusuarios=new listausuarios(email,nombre,apellido,numero_documento,password,tipo,"false")
    lista_usuarios.push(crearusuarios)
    localStorage.setItem("json_usuario",JSON.stringify(lista_usuarios))
+   alert("Usuario creado")
+   window.location.href="../html/ingresarusuario.html"
   }
 }
       
