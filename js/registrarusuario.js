@@ -5,7 +5,15 @@ var contador4=0;
 var mail;
 var password;
 var registrou=[mail,password]
-function registro() {
+
+function proceso_registrar() {
+  
+  registrar_usuario()
+  ingresar_pagina_consejos()
+
+}
+
+function registrar_usuario() {
      mail = document.getElementById("id_Input_Email").value;
      password = document.getElementById("id_Input_Password").value;
     if (contador==0&&contador2==2) {
@@ -32,4 +40,8 @@ registrou[contador4]=password;
     console.log(registrou)
     
   }
+}
+
+function ingresar_pagina_consejos() {
+  window.location.href="paginaconsejos.html"
 }
