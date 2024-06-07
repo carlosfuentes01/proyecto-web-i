@@ -157,7 +157,7 @@ color: var(--Ver_Oscuro);
     opacity: 80%;
     background-color: var(--Ver_Claro);
 }
-.Div_Registrarse_Inside_Negro>a{
+.Div_Registrarse_Inside_Negro>p{
     font-size: 20px;
     color: var(--Azul_Oscuro);
     text-decoration: none;

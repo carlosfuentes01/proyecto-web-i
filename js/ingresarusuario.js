@@ -1,33 +1,44 @@
+
 function identificar_usuario() {
-    var correo = document.getElementById("id_Input_Mail").value;
-    var contra = document.getElementById("id_Input_Password").value;
-    var login= [correo,contra]
-    var guardado = [correo,"Pepito"];
-    
-    var bandera_correo=false;
-    var bandera_contra=false;
-        for (let index = 0; index < guardado.length; index++) {
-            if (guardado[index]==login[index]) {
-                bandera_contra=true;
-                bandera_correo=true;
-                
-            }else{
-                bandera_contra=false;
-                bandera_correo=false;
-            }
-        }
-    
-            if (bandera_contra&&bandera_correo==true) {
-                console.log("Bienvenido")
-                
-            }  
-            else
-            {
-                console.log("ERROR")
-            }
+    var correo = document.getElementById("id_Input_Mail");
+     var password = document.getElementById("id_Input_Password").value;
+           if (correo==""|| password=="") {
+            alert("llene los campos vacios")
+            correo.focus();
+           } else {
+            let entro=false
+            let administrador;
+                var lista_usuarios=JSON.parse(localStorage.getItem("json_usuario")|| "[]")
+                for (let i = 0; i < lista_usuarios.length; i++) {
+                    if (lista_usuarios[i].email == correo.value) {
+                     if (lista_usuarios[i].password==password) {
+                       
+                            entro=true
+                            administrador=lista_usuarios[i].admin
+                            console.log(administrador+" es administrador")
+                            console.log(lista_usuarios[i].email+"cuenta admin")
+                             break; 
+                        }
+                        
+                     }
             
+                }
+                
+                if (entro==false) {
+                    alert("cuenta o contraseña incorrecta")
+                }else{
+                    if (administrador=="true") {
+                        window.location.href="../html/menuadministrador.html"
+                    }else{
+                        window.location.href="../html/paginaconsejos.html"
+                    }
+                    
+                }
+                
+           } 
         
     
     
         
     }
+

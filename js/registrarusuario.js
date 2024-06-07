@@ -1,47 +1,40 @@
-var contador=0;
-var contador2=2;
-var contador3=0;
-var contador4=0;
-var mail;
-var password;
-var registrou=[mail,password]
-
-function proceso_registrar() {
-  
-  registrar_usuario()
-  ingresar_pagina_consejos()
-
-}
 
 function registrar_usuario() {
-     mail = document.getElementById("id_Input_Email").value;
-     password = document.getElementById("id_Input_Password").value;
-    if (contador==0&&contador2==2) {
-        registrou[contador]=mail;
-registrou[contador2]=password;
-    }
+ 
+  let usuario_existente=false
+     email = document.getElementById("id_Input_Email").value;
+     nombre = document.getElementById("id_Input_Name").value;
+     apellido=document.getElementById("id_Input_Apellido").value
+     numero_documento=document.getElementById("id_Input_NºDocumento").value
+      password=document.getElementById("id_Input_Password").value
+        tipo_documento=document.getElementById("id_tipo_Input_Documento").value
+        var tipo="";
+        if (tipo_documento==1) {
+          tipo="Tarjeta identidad"
+        }if (tipo_documento==2) {
+          tipo="Cédula"
+        } else {
+          tipo="Cédula extranjera"
+        }
+console.log(tipo+"tipo documento")
+if (email==""||nombre==""||apellido==""||numero_documento==""||password=="") {
+  
+      alert("llene los espacios vacios")
 
-   
-    
-    if (document.getElementById("id_Registr")==onclick) {
-        contador++
-        contador2++
-        contador3=contador+1;
-        contador4=contador2+1;
-
-    }
-    if (contador>1) {
-        registrou[contador3]=mail;
-registrou[contador4]=password;
-        
-    }
-    console.log(contador)
-  for (let index = 0; index < registrou.length; index++) {
-    console.log(registrou)
-    
+}else{
+  var lista_usuarios=JSON.parse(localStorage.getItem("json_usuario")|| "[]")
+  for (let i = 0; i < lista_usuarios.length; i++) {
+      if (lista_usuarios[i].email == email) {
+        usuario_existente=true
+      }
+  }
+  if (usuario_existente) {
+    alert("usuario ya existente")
+  }else{
+    var crearusuarios=new listausuarios(email,nombre,apellido,numero_documento,password,tipo,"false")
+   lista_usuarios.push(crearusuarios)
+   localStorage.setItem("json_usuario",JSON.stringify(lista_usuarios))
   }
 }
-
-function ingresar_pagina_consejos() {
-  window.location.href="paginaconsejos.html"
+      
 }
