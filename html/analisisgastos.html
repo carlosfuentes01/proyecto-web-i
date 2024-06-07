@@ -12,7 +12,7 @@
 
     <div class="div_superior">
 
-        <div class="div_superior_derecha_inside_div_superior">
+        <div class="div_derecha_inside_superior">
 
             <div class="div_circulo_contenedor">
                 <img src="../recursos/imagenes/logo_cetus.png" height="50px" alt="">
@@ -23,24 +23,29 @@
             <button onclick="ingresar_pagina_consejos()"><b>Menu Principal</b></button>
                
         </div>
-        <div class="div_superior_izquierda_inside_div_superior"> <button onclick="ingresar_pagina_inicio()"><b>Cerrar session</b></button> </div>
+        <div class="div_izquierda_inside_superior"> <button onclick="ingresar_pagina_inicio()"><b>Cerrar session</b></button> </div>
     </div>
 
     <div class="div_contenedor">
 
         <div class="div_barra_navegaciob_inside_div_contenedor">
 
-            <div class="div_elementos_inside_div_contenedor">
-
-               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_gestion_cuentas_bancarias()">Gestion de cuentas bancarias</button></div>
-               <div class=" div_boton_seleccionado"> <button onclick="ingresar_analisis_gastos()">Analisis de gastos</button></div>
-               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_gestion_transacciones()">Gestion de transaccines</button></div>
-               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_gestion_alertas()">Gestion de alertas</button></div>
-               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_historial()">Historia del movimientos bancario</button></div>
+          
+                <a href="./gestioncuentasbancarias.html" class="Menu_Boton">Gestion de cuentas bancarias</a>
+                <a href="./analisisgastos.html" class="Menu_Boton">Analisis de gastos</a>
+                <a href="./gestiontransacciones.html" class="Menu_Boton">Gestion de transacciones</a>
+                <a href="./gestionalertas.html" class="Menu_Boton">Gestion de alertas</a>
+                <a href="./historialmovimientosbancarios.html" class="Menu_Boton">Historia del movimientos bancario</a>
+             
+               
                 
-                <div class="div_circulo_contenedor" style="margin-top: 50%"> <img src="../recursos/imagenes/logo_cetus.png" height="100px" alt=""> </div>
+        
+                <div id="logo_contenedor">
+                    <img src="../recursos/imagenes/logo_cetus.png" id="logo">
 
-            </div>
+                </div>
+                 
+            
         </div>
 
         <div>

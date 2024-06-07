@@ -5,9 +5,37 @@
     --ver_claro:#B4EAA9;
 
 }
+.Menu_Boton{
+    background-color: #F6F6F6;
+    display: flex;
+    height: 60px;
+    width: 80%;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 20px;
 
+    border-radius: 5px;
+}
+.Menu_Boton:first-child{
+    margin-top: 30px;
+}
+#logo_contenedor{
+    margin-top: 60px;
+width: 130px;
+height: 130px;
+display: flex;
+}
+#logo{
+    border-radius: 50%;
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+}
 
-
+.Menu_Boton:hover{
+    background-color: #A9E4A4;
+}
 body{
 
     margin: 0;
@@ -16,10 +44,9 @@ body{
 
 .div_superior{
 
-    padding: 1%;
     display:flex;
-    margin-left: 0;
-    margin-right: 0;
+    justify-content: space-between;
+    height: 10dvh;
     background-color: var( --Azul_Oscuro);
 
     
@@ -32,26 +59,22 @@ h2{
 
 }
 
-.div_superior_derecha_inside_div_superior{
-
+.div_derecha_inside_superior{
     display: flex;
-    margin-right: auto;
-    margin-left: 2%;
-    column-gap: 10px;
     align-items: center;
     
 }
 
-.div_superior_izquierda_inside_div_superior{
+.div_izquierda_inside_superior{
 
     display: flex;
     align-items: center;
-    margin-right: 2%;
-    margin-left: auto;    
+    margin-right: 15px;
+     
    
 }
 
-.div_superior_derecha_inside_div_superior > button{
+.div_derecha_inside_superior > button{
 
     background-color: var(--Blanco);
     font-size: 15px;
@@ -59,7 +82,7 @@ h2{
    
 }
 
-.div_superior_izquierda_inside_div_superior > button{
+.div_izquierda_inside_superior > button{
 
     background-color: var(--Ver_Oscuro);
     font-size: 15px;
@@ -69,45 +92,32 @@ h2{
 .div_contenedor{
 
     display: grid;
-    margin-top: 2%;
-    height: 90%;
+    height: 90dvh;
     grid-template-columns: 20% 80%;
-    grid-template-rows: 40% 60%;
-
-
 }
 
 .div_barra_navegaciob_inside_div_contenedor{
-
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 2;
-    background-color: var( --Azul_Oscuro);
-  
-
+    height: 90dvh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
 }
 
 
 
 .div_circulo_contenedor{
     display: flex;
-    gap: 10px;
-
+   width: 50px;
+   height: 50px;
 
 }
 .div_circulo_contenedor > img{
-    flex-grow: inherit;
-    border-radius: 100%;
+    flex-grow: 1;
+    object-fit: cover;
+    border-radius: 50%;
     
-}
-
-.div_elementos_inside_div_contenedor{
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto auto ;
-    align-items: center;
-    margin: 10%;
-    gap:5%;
-
 }
 
 
@@ -121,27 +131,4 @@ h2{
     
 }
 
-.div_boton_inside_div_elementos > button{
-    
-    background-color: var(--Blanco);
-    margin: 5%;
-    border: none;
-    font-size: 15px;
-   
-}
 
-.div_boton_seleccionado{
-    
-    align-items: center;
-    text-align: center;
-    background-color: var(--ver_claro);
-
-}
-
-.div_boton_seleccionado>button{
-    
-    background-color: var(--ver_claro);
-    margin: 5%;
-    border: none;
-    font-size: 15px;
-}
