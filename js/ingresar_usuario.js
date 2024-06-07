@@ -18,9 +18,6 @@ function identificar_usuario() {
                             administrador=lista_usuarios[i].admin
                             console.log(lista_usuarios[i])
                             localStorage.setItem("num_cuenta_actual",JSON.stringify(lista_usuarios[i]))
-                      
-                            
-                            
                             
                              break; 
                         }

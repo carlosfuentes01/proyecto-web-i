@@ -26,7 +26,6 @@ function read_cuentas_bancarias() {
         for (let index = 0; index < cuentas_usuario.length; index++) {
             
             var fila=tabla.insertRow(-1)
-
             var columna1=fila.insertCell(0)
             columna1.appendChild(document.createTextNode(cuentas_usuario[index].numero_de_cuenta))
 
