@@ -1,4 +1,4 @@
-function inicial() {
+window.onload=function(){
     let admincreado=false
     var admin=JSON.parse(localStorage.getItem("json_usuario")|| "[]")
        var crearadmin= new listausuarios("admin2","Simon","Bolivar",  100000 ,"contraseña_admin","Cédula","true")

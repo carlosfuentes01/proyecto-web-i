@@ -22,7 +22,8 @@ if (email==""||nombre==""||apellido==""||numero_documento==""||password=="") {
       alert("Llene los espacios vacios")
 
 }else{
-  var lista_usuarios=JSON.parse(localStorage.getItem("json_usuario")|| "[]")
+  if (limite(nombre,20) && limite(apellido,20)&&limite(email,64)&&limite(password,30)&&limite(numero_documento,12)) {
+    var lista_usuarios=JSON.parse(localStorage.getItem("json_usuario")|| "[]")
   for (let i = 0; i < lista_usuarios.length; i++) {
       if (lista_usuarios[i].email == email) {
         usuario_existente=true
@@ -37,6 +38,19 @@ if (email==""||nombre==""||apellido==""||numero_documento==""||password=="") {
    alert("Usuario creado")
    window.location.href="../html/ingresarusuario.html"
   }
+  }else{
+    alert("hay valores demasiado grandes")
+  }
+  
 }
       
+}
+function limite(input,limite) {
+  console.log(input.length+"entrada")
+  console.log(limite+"limite")
+  let limite_not_break=true
+  if (input.length>limite) {
+    limite_not_break=false
+  }
+  return limite_not_break
 }
