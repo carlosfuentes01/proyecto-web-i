@@ -52,16 +52,17 @@ body{
     
 }
 
-h2{
-    margin: 10px;
-    background-color: var(--Ver_Oscuro);
-    color: white;
-
-}
 
 .div_derecha_inside_superior{
     display: flex;
     align-items: center;
+    
+}
+
+.div_derecha_inside_superior>h2{
+    margin: 10px;
+    background-color: var(--Ver_Oscuro);
+    color: white;
     
 }
 
@@ -105,8 +106,6 @@ h2{
     align-items: center;
 }
 
-
-
 .div_circulo_contenedor{
     display: flex;
    width: 50px;
@@ -121,10 +120,13 @@ h2{
 }
 
 
-
 .div_boton_inside_div_elementos {
     align-items: center;
     text-align: center;
     background-color: var(--Blanco);
   
+}
+
+.div_consejos{
+    display: flex;
 }
