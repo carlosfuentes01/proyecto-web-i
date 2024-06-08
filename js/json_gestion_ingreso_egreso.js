@@ -5,6 +5,5 @@ class gestion_ingreso_egreso{
         this.descripcion=descripcion
         this.tipo=tipo
         this.categoria=categoria
-        this.email=email
     }
 }

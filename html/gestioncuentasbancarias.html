@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="../js/botones_enlace.js"></script>
+    <script src="../js/botonesenlace.js"></script>
     <link rel="stylesheet" href="../css/estilogestioncuentas.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gestion cuentas bancarias</title>
     <script src="../js/gestion_cuentas_bancarias.js"></script>
+    <script src="../js/json_gestion_cuentas_bancarias.js"></script>
 </head>
 
 <body>
 
     <div class="div_superior">
 
-        <div class="div_derecha_inside_superior">
+        <div class="div_superior_derecha_inside_div_superior">
 
             <div class="div_circulo_contenedor">
                 <img src="../recursos/imagenes/logo_cetus.png" height="50px" alt="">
             </div>
 
-            <h2>Nombre de Usuario</h2>
+            <h2 id="nombre_usuario_inside_div_superior_derecha_inside_div_superior"></h2>
 
             <button onclick="ingresar_pagina_consejos()"><b>Menu Principal</b></button>
-
+               
         </div>
-        <div class="div_izquierda_inside_superior"> <button onclick=" ingresar_pagina_inicio()"><b>Cerrar session</b></button> </div>
+        <div class="div_superior_izquierda_inside_div_superior"> <button onclick="ingresar_pagina_inicio()"><b>Cerrar session</b></button> </div>
     </div>
 
     <div class="div_contenedor">
 
-        <div class="div_barra_navegacion_inside_contenedor">
+        <div class="div_barra_navegaciob_inside_div_contenedor">
 
+            <div class="div_elementos_inside_div_contenedor">
 
-            <a href="./gestioncuentasbancarias.html" class="Menu_Boton">Gestion de cuentas bancarias</a>
-            <a href="./analisisgastos.html" class="Menu_Boton">Analisis de gastos</a>
-            <a href="./gestiontransacciones.html" class="Menu_Boton">Gestion de transacciones</a>
-            <a href="./gestionalertas.html" class="Menu_Boton">Gestion de alertas</a>
-            <a href="./historialmovimientosbancarios.html" class="Menu_Boton">Historia del movimientos bancario</a>
-
-
-
-
-            <div id="logo_contenedor">
-                <img src="../recursos/imagenes/logo_cetus.png" id="logo">
+               <div class=" div_boton_seleccionado"> <button onclick="ingresar_gestion_cuentas_bancarias()">Gestion de cuentas bancarias</button></div>
+               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_analisis_gastos()">Analisis de gastos</button></div>
+               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_gestion_transacciones()">Gestion de transaccines</button></div>
+               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_gestion_alertas()">Gestion de alertas</button></div>
+               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_historial()">Historia del movimientos bancario</button></div>
+                
+                <div class="div_circulo_contenedor" style="margin-top: 50%"> <img src="../recursos/imagenes/logo_cetus.png" height="100px" alt=""> </div>
 
             </div>
-        
         </div>
 
         <div id="div_contenedor_general_cuentas_bancarias">
             <div>
-                <button id="boton_vincular_cuenta_inside_div_contenedor_general">Vincular cuenta</button>
-                <button id="boton_desvincular_cuenta_inside_div_contenedor_general">Desvincular cuenta</button>
-                <button id="boton_actualizar_cuenta_inside_div_contenedor_general">Actualizar cuenta</button>
+                <button id="boton_vincular_cuenta_inside_div_contenedor_general" onclick="abrir_modal_crear()">Vincular cuenta</button>
+                <button id="boton_desvincular_cuenta_inside_div_contenedor_general" onclick="mostrar_borrar()">Desvincular cuenta</button>
+                <button id="boton_actualizar_cuenta_inside_div_contenedor_general"
+                onclick="abrir_modal_actualizar()">Actualizar cuenta</button>
             </div>
             <div>
-                <table border="1" id="tabla_gestion_cuentas_bancarias">
+                <table id="tabla_gestion_cuentas_bancarias">
                     <caption>
                         <th>
                             <td>
@@ -74,41 +72,166 @@
         </div>
     </div>
     <dialog id="modal_crear">
-        <h2>añadir cuenta</h2>
-<input type="text" id="input_numero_cuenta_modal_crear" placeholder="numero cuenta">
-<select name="" id="input_banco_cuenta_modal_crear">
-    <option value="Davivienda" selected>Davivienda</option>
-    <option value="Bancolombia">Bancolombia</option>
-    <option value="Bancos de Colombia">Bancos de Colombia</option>
-    <option value="Banco Agrario de Colombia">Banco Agrario de Colombia</option>
-    <option value="Banco AV Villas">Banco AV Villas</option>
-    <option value="Banco Caja Social">Banco Caja Social</option>
-    <option value="Banco de Occidente (Colombia)">Banco de Occidente (Colombia)</option>
-    <option value="Banco Granahorrar">Banco Granahorrar</option>
-    <option value="Banco Itaú">Banco Itaú</option>
-    <option value="Banco Pichincha">Banco Pichincha</option>
-    <option value="Banco Popular (Colombia)">Banco Popular (Colombia)</option>
-    <option value="BBVA (Colombia)">BBVA (Colombia)</option>
-    <option value="Banco de Bogotá">Banco de Bogotá</option>
-    <option value="Citi Colombia">Citi Colombia</option>
-    <option value="Colpatria">Colpatria</option>
-    <option value="Corficolombiana">Corficolombiana</option>
-    <option value="Banco Falabella">Banco Falabella</option>
-    <option value="Fondo Nacional del Ahorro">Fondo Nacional del Ahorro</option>
-    <option value="GNB Sudameris">GNB Sudameris</option>
-    <option value="Lulo Bank">Lulo Bank</option>
-    <option value="Nubank">Nubank</option>
-</select>
-<select name="" id="input_tipo_cuenta_modal_crear">
-    <option value="ahorro" selected>Ahorro</option>
-    <option value="corriente">Corriente</option>
-    <option value="inversion">Inversión</option>
-</select>
-<input type="number" placeholder="saldo" id="input_saldo_modal_crear">
-<select name="" id="input_estado_modal_crear">
-    <option value="activa" selected>activa</option>
-</select>
-<input type="text">
+        <div><h2>añadir cuenta</h2></div>
+        
+        <div><input type="text" id="input_numero_cuenta_modal_crear" placeholder="numero cuenta">
+        </div>
+        <div>
+            <select name="" id="input_banco_cuenta_modal_crear">
+                <option value="Davivienda" selected>Davivienda</option>
+                <option value="Bancolombia">Bancolombia</option>
+                <option value="Bancos de Colombia">Bancos de Colombia</option>
+                <option value="Banco Agrario de Colombia">Banco Agrario de Colombia</option>
+                <option value="Banco AV Villas">Banco AV Villas</option>
+                <option value="Banco Caja Social">Banco Caja Social</option>
+                <option value="Banco de Occidente (Colombia)">Banco de Occidente (Colombia)</option>
+                <option value="Banco Granahorrar">Banco Granahorrar</option>
+                <option value="Banco Itaú">Banco Itaú</option>
+                <option value="Banco Pichincha">Banco Pichincha</option>
+                <option value="Banco Popular (Colombia)">Banco Popular (Colombia)</option>
+                <option value="BBVA (Colombia)">BBVA (Colombia)</option>
+                <option value="Banco de Bogotá">Banco de Bogotá</option>
+                <option value="Citi Colombia">Citi Colombia</option>
+                <option value="Colpatria">Colpatria</option>
+                <option value="Corficolombiana">Corficolombiana</option>
+                <option value="Banco Falabella">Banco Falabella</option>
+                <option value="Fondo Nacional del Ahorro">Fondo Nacional del Ahorro</option>
+                <option value="GNB Sudameris">GNB Sudameris</option>
+                <option value="Lulo Bank">Lulo Bank</option>
+                <option value="Nubank">Nubank</option>
+            </select>
+            <select name="" id="input_tipo_cuenta_modal_crear">
+                <option value="ahorro" selected>Ahorro</option>
+                <option value="corriente">Corriente</option>
+                <option value="inversion">Inversión</option>
+            </select>
+        </div>
+        <div>
+            <input type="number" placeholder="saldo" id="input_saldo_modal_crear">
+            <select name="" id="input_estado_modal_crear">
+                <option value="activa" selected>Activa</option>
+                <option value="inactiva" >Inactiva</option>
+                <option value="cerrada" >Cerrada</option>
+            </select>
+        </div>
+        <div>
+            <input type="date" name="" id="input_fecha_modal_crear">
+        </div>
+<div>
+    descripcion
+<textarea name="" id="input_descripcion_moda_crear" cols="30" rows="10"></textarea>
+</div>
+<button onclick="vincular()">vincular</button>
+<button onclick="cerrar_modal_crear()">cerrar</button>
+
+    </dialog>
+
+    <dialog id="modal_actualizar">
+        <div><h2>actualizar</h2></div>
+        
+        <div>
+            <select name="" id="input_numero_cuenta_modal_actualizar" onchange="cambiar_valores_actualizar()"></select>
+
+        </div>
+        <div>
+            <select name="" id="input_banco_cuenta_modal_actualizar">
+                <option value="Davivienda" id="Davivienda">Davivienda</option>
+                <option name="banco_escogido" value="Bancolombia" selected  id="Bancolombia">Bancolombia</option>
+                <option value="Bancos de Colombia"id="Bancos de Colombia">Bancos de Colombia</option>
+                <option value="Banco Agrario de Colombia"id="Banco Agrario de Colombia">Banco Agrario de Colombia</option>
+                <option value="Banco AV Villas"id="Banco AV Villas">Banco AV Villas</option>
+                <option value="Banco Caja Social"id="Banco Caja Social">Banco Caja Social</option>
+                <option value="Banco de Occidente (Colombia)"id="Banco de Occidente (Colombia)">Banco de Occidente (Colombia)</option>
+                <option value="Banco Granahorrar"id="Banco Granahorrar">Banco Granahorrar</option>
+                <option value="Banco Itaú"id="Banco Itaú">Banco Itaú</option>
+                <option value="Banco Pichincha"id="Banco Pichincha">Banco Pichincha</option>
+                <option value="Banco Popular (Colombia)"id="Banco Popular (Colombia)">Banco Popular (Colombia)</option>
+                <option value="BBVA (Colombia)"id="BBVA (Colombia)">BBVA (Colombia)</option>
+                <option value="Banco de Bogotá"id="Banco de Bogotá">Banco de Bogotá</option>
+                <option value="Citi Colombia"id="Citi Colombia">Citi Colombia</option>
+                <option value="Colpatria"id="Colpatria">Colpatria</option>
+                <option value="Corficolombiana"id="Corficolombiana">Corficolombiana</option>
+                <option value="Banco Falabella"id="Banco Falabella">Banco Falabella</option>
+                <option value="Fondo Nacional del Ahorro"id="Fondo Nacional del Ahorro">Fondo Nacional del Ahorro</option>
+                <option value="GNB Sudameris"id="GNB Sudameris">GNB Sudameris</option>
+                <option value="Lulo Bank"id="Lulo Bank">Lulo Bank</option>
+                <option value="Nubank" id="Nubank">Nubank</option>
+            </select>
+            <select name="" id="input_tipo_cuenta_modal_actualizar">
+                <option value="ahorro" selected id="ahorro">Ahorro</option>
+                <option value="corriente" id="corriente">Corriente</option>
+                <option value="inversion" id="inversion">Corriente</option>
+            </select>
+        </div>
+        <div>
+            <input type="number" placeholder="saldo" id="input_saldo_modal_actualizar">
+            <select name="" id="input_estado_modal_actualizar">
+                <option value="activa" selected id="activa">Activa</option>
+                <option value="inactiva" id="inactiva">Inactiva</option>
+                <option value="cerrada" id="cerrada">Cerrada</option>
+            </select>
+        </div>
+        <div>
+            <input type="date" name="" id="input_fecha_modal_actualizar">
+        </div>
+<div>
+    descripcion
+<textarea name="" id="input_descripcion_modal_actualizar" cols="30" rows="10"></textarea>
+</div>
+    <button onclick="actualizar_cuenta()">actualizar</button>
+    <button onclick="cerrar_modal_actualizar()">cancelar</button>
+
+    </dialog>
+    <dialog id="modal_borrar">
+        <div><h2>borrar</h2></div>
+        
+        <div>
+            <select name="" id="input_numero_cuenta_modal_borrar" onchange="cambiar_cuenta_borrar()"></select>
+        </div>
+        <div>
+            <select name="" id="input_banco_cuenta_modal_borrar" disabled >
+                <option value="Davivienda" id="Davivienda">Davivienda</option>
+                <option name="banco_escogido" value="Bancolombia" selected  id="Bancolombia">Bancolombia</option>
+                <option value="Bancos de Colombia"id="Bancos de Colombia">Bancos de Colombia</option>
+                <option value="Banco Agrario de Colombia"id="Banco Agrario de Colombia">Banco Agrario de Colombia</option>
+                <option value="Banco AV Villas"id="Banco AV Villas">Banco AV Villas</option>
+                <option value="Banco Caja Social"id="Banco Caja Social">Banco Caja Social</option>
+                <option value="Banco de Occidente (Colombia)"id="Banco de Occidente (Colombia)">Banco de Occidente (Colombia)</option>
+                <option value="Banco Granahorrar"id="Banco Granahorrar">Banco Granahorrar</option>
+                <option value="Banco Itaú"id="Banco Itaú">Banco Itaú</option>
+                <option value="Banco Pichincha"id="Banco Pichincha">Banco Pichincha</option>
+                <option value="Banco Popular (Colombia)"id="Banco Popular (Colombia)">Banco Popular (Colombia)</option>
+                <option value="BBVA (Colombia)"id="BBVA (Colombia)">BBVA (Colombia)</option>
+                <option value="Banco de Bogotá"id="Banco de Bogotá">Banco de Bogotá</option>
+                <option value="Citi Colombia"id="Citi Colombia">Citi Colombia</option>
+                <option value="Colpatria"id="Colpatria">Colpatria</option>
+                <option value="Corficolombiana"id="Corficolombiana">Corficolombiana</option>
+                <option value="Banco Falabella"id="Banco Falabella">Banco Falabella</option>
+                <option value="Fondo Nacional del Ahorro"id="Fondo Nacional del Ahorro">Fondo Nacional del Ahorro</option>
+                <option value="GNB Sudameris"id="GNB Sudameris">GNB Sudameris</option>
+                <option value="Lulo Bank"id="Lulo Bank">Lulo Bank</option>
+                <option value="Nubank" id="Nubank">Nubank</option>
+            </select>
+            <select name="" id="input_tipo_cuenta_modal_borrar" disabled>
+                <option value="ahorro" selected id="ahorro">Ahorro</option>
+                <option value="corriente" id="corriente">Corriente</option>
+                <option value="inversion" id="inversion">Corriente</option>
+            </select>
+        </div>
+        <div>
+            <input type="number" placeholder="saldo" id="input_saldo_modal_borrar" disabled>
+            <select name="" id="input_estado_modal_borrar" disabled>
+                <option value="activa" selected id="activa">Activa</option>
+                <option value="inactiva" id="inactiva">Inactiva</option>
+                <option value="cerrada" id="cerrada">Cerrada</option>
+            </select>
+        </div>
+        <div>
+            <input type="date" name="" id="input_fecha_modal_borrar" disabled>
+        </div>
+    <button onclick="borrar_cuenta()">borrar</button>
+    <button onclick="cerrar_modal_borrar()">cancelar</button>
+
     </dialog>
 </body>
 </html>
