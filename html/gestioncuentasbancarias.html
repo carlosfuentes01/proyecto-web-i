@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="../js/botonesenlace.js"></script>
+    <script src="../js/botones_enlace.js"></script>
     <link rel="stylesheet" href="../css/estilogestioncuentas.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,35 +13,39 @@
 
     <div class="div_superior">
 
-        <div class="div_superior_derecha_inside_div_superior">
+        <div class="div_derecha_inside_superior">
 
             <div class="div_circulo_contenedor">
                 <img src="../recursos/imagenes/logo_cetus.png" height="50px" alt="">
             </div>
 
-            <h2 id="nombre_usuario_inside_div_superior_derecha_inside_div_superior"></h2>
+            <h2>Nombre de Usuario</h2>
 
             <button onclick="ingresar_pagina_consejos()"><b>Menu Principal</b></button>
-               
+
         </div>
-        <div class="div_superior_izquierda_inside_div_superior"> <button onclick="ingresar_pagina_inicio()"><b>Cerrar session</b></button> </div>
+        <div class="div_izquierda_inside_superior"> <button onclick=" ingresar_pagina_inicio()"><b>Cerrar session</b></button> </div>
     </div>
 
     <div class="div_contenedor">
 
-        <div class="div_barra_navegaciob_inside_div_contenedor">
+        <div class="div_barra_navegacion_inside_contenedor">
 
-            <div class="div_elementos_inside_div_contenedor">
 
-               <div class=" div_boton_seleccionado"> <button onclick="ingresar_gestion_cuentas_bancarias()">Gestion de cuentas bancarias</button></div>
-               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_analisis_gastos()">Analisis de gastos</button></div>
-               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_gestion_transacciones()">Gestion de transaccines</button></div>
-               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_gestion_alertas()">Gestion de alertas</button></div>
-               <div class=" div_boton_inside_div_elementos"> <button onclick="ingresar_historial()">Historia del movimientos bancario</button></div>
-                
-                <div class="div_circulo_contenedor" style="margin-top: 50%"> <img src="../recursos/imagenes/logo_cetus.png" height="100px" alt=""> </div>
+            <a href="./gestioncuentasbancarias.html" class="Menu_Boton">Gestion de cuentas bancarias</a>
+            <a href="./analisisgastos.html" class="Menu_Boton">Analisis de gastos</a>
+            <a href="./gestiontransacciones.html" class="Menu_Boton">Gestion de transacciones</a>
+            <a href="./gestionalertas.html" class="Menu_Boton">Gestion de alertas</a>
+            <a href="./historialmovimientosbancarios.html" class="Menu_Boton">Historia del movimientos bancario</a>
+
+
+
+
+            <div id="logo_contenedor">
+                <img src="../recursos/imagenes/logo_cetus.png" id="logo">
 
             </div>
+        
         </div>
 
         <div id="div_contenedor_general_cuentas_bancarias">

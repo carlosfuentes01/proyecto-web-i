@@ -96,7 +96,7 @@ h2{
     grid-template-columns: 20% 80%;
 }
 
-.div_barra_navegaciob_inside_div_contenedor{
+.div_barra_navegacion_inside_contenedor{
     height: 90dvh;
     background-color: #000;
     display: flex;
@@ -126,9 +126,7 @@ h2{
     align-items: center;
     text-align: center;
     background-color: var(--Blanco);
-
-
-    
+  
 }
 
 
