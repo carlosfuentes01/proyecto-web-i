@@ -1,0 +1,50 @@
+
+.Modal{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #111111bd;
+display: flex;
+opacity: 0;
+pointer-events: none;
+transition: opacity .6s; 
+
+}
+.modal__container{
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    max-height: 90%;
+    background-color: aqua;
+    border: 4px black solid;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: flex;
+    flex-direction: column;
+    
+}
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+}
+.inputs{
+    margin-top: 20px;
+    width: 340px;
+    height: 20px;
+}
+#inpu{
+    margin-top: 0;
+    height: 130px;
+}
+#inp{
+    margin-top: 0;
+    height: 30px;
+}
+#cerar_modal{
+    margin-bottom: 20px;
+}

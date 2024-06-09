@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/hola.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ventana modal</h1>
+    <button id="abrir_modal">Abrir Modal</button>
+
+    <section id="modal" class="Modal">
+        <div class="modal__container">
+            <input class="inputs" type="text" placeholder="Número de cuenta">
+
+            <input class="inputs" type="date" id="fecha" placeholder="Fecha">
+
+            <input class="inputs" type="number" id="precio" placeholder="Valor">
+
+            <select class="inputs" name="tipo" id="tipo">
+                <option value="1">Ingreso</option>
+                <option value="2">Egreso</option>
+            </select>
+            <h2>Descripción transacción</h2>
+            <input class="inputs" type="text" id="inpu">
+            <h2>Adjuntar</h2>
+            <input type="image" class="inputs" id="inp">
+            <p></p>
+            <button id="cerar_modal" onclick="holap()">Realizar transacción</button>
+        </div>
+    </section>
+
+</body>
+<script type="module" src="./js/index.js"></script>
+<script type="module" src="./js/index2.js"></script>
+
+
+</html>

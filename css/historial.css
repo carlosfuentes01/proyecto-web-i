@@ -1,0 +1,26 @@
+body{
+    
+    
+}
+.contenedor_padre{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+.Contenedor{ 
+    display: flex;
+    width: 60%;
+    height: 80px;
+    border: 4px black solid;
+    justify-content: space-between;
+}
+.Fecha{
+    width: 10%;
+    border: 3px black solid;
+}
+.Precio{
+    
+    width: 10%;
+    border: 3px black solid;
+}
