@@ -226,11 +226,8 @@ function llenar_datos_actualizacion(index) {
     var parseindex=parseInt(index,10)
     var lista_cuentas_bancarias=JSON.parse(localStorage.getItem("json_gestion_cuentas_bancarias")||"[]")
 var numero=lista_cuentas_bancarias[parseindex].numero_de_cuenta
-console.log(numero)
     var input_numero_cuenta_modal_actualizar=document.getElementById("input_numero_cuenta_modal_actualizar")
     input_numero_cuenta_modal_actualizar=numero
-    console.log(lista_cuentas_bancarias[parseindex].numero_de_cuenta)
-    console.log(input_numero_cuenta_modal_actualizar.value + "hola")
     
     var input_banco_cuenta_modal_actualizar=document.getElementById("input_banco_cuenta_modal_actualizar")
      input_banco_cuenta_modal_actualizar.value=lista_cuentas_bancarias[parseindex].nombre_banco
@@ -290,7 +287,9 @@ function actualizar_cuenta() {
     var input_descripcion_modal_actualizar=document.getElementById("input_descripcion_modal_actualizar").value
     var input_fecha_modal_actualizar=document.getElementById("input_fecha_modal_actualizar").value
 
-    
+    if (input_saldo_modal_actualizar.value=="") {
+        alert("llene los espacios vacios")
+    } else {
     
     for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
         if (index==input_numero_cuenta_modal_actualizar) {
@@ -306,7 +305,7 @@ function actualizar_cuenta() {
     }
     localStorage.setItem("json_gestion_cuentas_bancarias",JSON.stringify(lista_cuentas_bancarias))
     limpiar();
-  
+}
 
   
    

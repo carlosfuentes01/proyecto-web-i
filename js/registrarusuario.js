@@ -32,7 +32,7 @@ if (email==""||nombre==""||apellido==""||numero_documento==""||password=="") {
   if (usuario_existente) {
     alert("Usuario ya existente")
   }else{
-    var crearusuarios=new listausuarios(email,nombre,apellido,numero_documento,password,tipo,"false")
+    var crearusuarios=new listausuario(email,nombre,apellido,numero_documento,password,tipo,"false")
    lista_usuarios.push(crearusuarios)
    localStorage.setItem("json_usuario",JSON.stringify(lista_usuarios))
    alert("Usuario creado")

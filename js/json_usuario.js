@@ -1,4 +1,4 @@
-class listausuarios{
+class listausuario{
     constructor(email,nombre,apellido,numero_documento,password,tipo_documento,admin){
         this.email=email
         this.nombre=nombre

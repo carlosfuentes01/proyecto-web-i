@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Administrador</title>
+    <script src="../js/gestion_ingreso_egreso.js"></script>
+    <script src="../js/json_tipo_ingreso_egreso.js"></script>
 </head>
 
 
@@ -23,7 +25,6 @@
 
             <h2 id="nombre_usuario_inside_div_superior_derecha_inside_div_superior"></h2>
 
-            <button onclick="ingresar_pagina_consejos()"><b>Menu Principal</b></button>
 
         </div>
         <div class="div_izquierda_inside_superior"> <button onclick=" ingresar_pagina_inicio()"><b>Cerrar session</b></button> </div>
@@ -32,19 +33,7 @@
     <div class="div_contenedor">
 
         <div class="div_barra_navegacion_inside_contenedor">
-
-
             <a href="#" class="Menu_Boton">gestion de tipos de ingresos y egresos</a>
-          
-           
-
-
-
-
-
-
-
-
 
             <div id="logo_contenedor">
                 <img src="../recursos/imagenes/logo_cetus.png" id="logo">
@@ -56,7 +45,83 @@
         </div>
         
     </div>
+    <div>
+        <div>
+            <h2>Gestion de tipo de Ingreso y egreso</h2>
+        </div>
+        <div>
+            <button onclick="abrir_modal_crear()">agregar</button>
+            <button onclick="abrir_modal_actualizar()">actualizar</button>
+        </div>
+        <div id="contenedor_general">
+            <table id="tabla_gestion_ingreso_egreso">
+                <caption>
+                    <th>
+                        <td>
+                            Código
+                        </td>
+                        <td>Nombre tipo</td>
+                        <td>Descripción </td>
+                        <td>Tipo</td>
+                        <td>Categoria</td>
+                        <td>Borrar</td>
+                    </th>
+                </caption>
+            </table>
+        </div>
+    </div>
+    <dialog id="modal_crear">
+        <div>
+            <input type="text" placeholder="Codigo" id="input_codigo">
+            <input type="Nombre" placeholder="Nombre" id="input_nombre">
+            <select name="" id="input_tipo" onchange="cambiar_categorias()">
+                <option value="ingreso">Ingreso</option>
+                <option value="egreso" selected>Egreso</option>
+            </select>
+            <select name="" id="input_categoria">
+                <option value="ninguna">ninguna</option>
+            </select>
+        </div>
+        <button onclick="crear_tipo()">crear</button>
+        <button onclick="cerrar_modal_crear()">salir</button>
+        <textarea name="" id="input_descripcion" cols="30" rows="10" placeholder="descripcion"></textarea>
+    </dialog>
 
+    <dialog id="modal_crear">
+        <div>
+            <input type="text" placeholder="Codigo" id="input_codigo">
+            <input type="Nombre" placeholder="Nombre" id="input_nombre">
+            <select name="" id="input_tipo" onchange="cambiar_categorias()">
+                <option value="ingreso">Ingreso</option>
+                <option value="egreso" selected>Egreso</option>
+            </select>
+            <select name="" id="input_categoria">
+                <option value="ninguna">ninguna</option>
+            </select>
+        </div>
+        <button onclick="crear_tipo()">crear</button>
+        <button onclick="cerrar_modal_crear()">salir</button>
+        <textarea name="" id="input_descripcion" cols="30" rows="10" placeholder="descripcion"></textarea>
+    </dialog>
+
+    <dialog id="modal_actualizar">
+        <div>
+            <select name="" id="codigo_a_seleccionar" onchange="cambiar_tipo_actualizar()"></select>
+            <input type="Nombre" placeholder="Nombre" id="input_nombre_actualizar">
+            <select name="" id="input_tipo_actualizar" onchange="cambiar_categorias_actualizar()">
+                <option value="ingreso">Ingreso</option>
+                <option value="egreso" selected>Egreso</option>
+            </select>
+            <select name="" id="input_categoria_actualizar">
+                <option value="ninguna">ninguna</option>
+            </select>
+        </div>
+        <button onclick="actualizar_tipo()">actualizar</button>
+        <button onclick="cerrar_modal_actualizar()">salir</button>
+        <textarea name="" id="input_descripcion_actualizar" cols="30" rows="10" placeholder="descripcion"></textarea>
+    </dialog>
+
+    
    
 </body>
 </html>
