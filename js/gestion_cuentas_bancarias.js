@@ -103,13 +103,15 @@ function vincular() {
     var input_estado_modal_crear=document.getElementById("input_estado_modal_crear")
 
 if (input_numero_cuenta_modal_crear.value==""||input_saldo_modal_crear.value=="") {
-    alert("llene los espacios vacios")
+    alert("escriba el numero de cuenta y/o el saldo")
 } else {
 
-
-        var fecha_actual=Date.now()
-        if (input_fecha_modal_crear.value>fecha_actual) {
-             alert("la fecha debe ser mas antigua que la actual")
+    var fechas_actual = Date.now();
+    var fecha_hoy = new Date(fechas_actual)
+    var delta_fechas= new Date(input_fecha_modal_crear.value)
+            if (delta_fechas>fecha_hoy) {
+                alert("fecha invalida")
+           
         }else{
             var lista_cuentas_bancarias=JSON.parse(localStorage.getItem("json_gestion_cuentas_bancarias")||"[]")
             if (!(lista_cuentas_bancarias.length==0)) {
@@ -288,9 +290,15 @@ function actualizar_cuenta() {
     var input_fecha_modal_actualizar=document.getElementById("input_fecha_modal_actualizar").value
 
     if (input_saldo_modal_actualizar.value=="") {
-        alert("llene los espacios vacios")
+        alert("escriba_el_saldo")
     } else {
-    
+        var fechas_actual = Date.now();
+        var fecha_hoy = new Date(fechas_actual)
+        var delta_fechas= new Date(input_fecha_modal_actualizar.value)
+                if (delta_fechas>fecha_hoy) {
+                    alert("fecha invalida")
+               
+            }else{
     for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
         if (index==input_numero_cuenta_modal_actualizar) {
             lista_cuentas_bancarias[index].nombre_banco=input_banco_cuenta_modal_actualizar
@@ -307,7 +315,7 @@ function actualizar_cuenta() {
     limpiar();
 }
 
-  
+}
    
 }
 function cerrar_modal_borrar() {
@@ -404,7 +412,23 @@ var input_numero_cuenta_modal_borrar=document.getElementById("input_numero_cuent
 function borrar_cuenta() {
     var input_numero_cuenta_modal_borrar=document.getElementById("input_numero_cuenta_modal_borrar").value
     var lista_cuentas_bancarias=JSON.parse(localStorage.getItem("json_gestion_cuentas_bancarias")||"[]")
+    var lista_transacciones=JSON.parse(localStorage.getItem("json_gestion_transacciones")||"[]")
+    for (let index = 0; index < lista_transacciones.length; index++) {
+        
+        if (lista_transacciones[index].email==usuario.email) {
+            console.log(lista_transacciones[index].cuenta_bancaria_relacionada)
+            console.log(lista_cuentas_bancarias[input_numero_cuenta_modal_borrar].numero_de_cuenta)
+            if (lista_transacciones[index].cuenta_bancaria_relacionada==lista_cuentas_bancarias[input_numero_cuenta_modal_borrar].numero_de_cuenta) {
+                console.log("entre")
+                lista_transacciones.splice(index,1)
+            }
+        }
+        
+    }
+    localStorage.setItem("json_gestion_transacciones",JSON.stringify(lista_transacciones))
     lista_cuentas_bancarias.splice(input_numero_cuenta_modal_borrar, 1)
+
     localStorage.setItem("json_gestion_cuentas_bancarias",JSON.stringify(lista_cuentas_bancarias))
+
     limpiar();
 }

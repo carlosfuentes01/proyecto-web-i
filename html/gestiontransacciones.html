@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gestion transacciones</title>
     <script src="../js/gestion_transacciones.js"></script>
+    <script src="../js/json_gestion_transacciones.js"></script>
 </head>
 
 <body>
@@ -54,13 +55,13 @@
                     Transaccines cuenta
                 </div>
                 <div>
-                    <button>Crear ingreso</button>
-                    <button>Crear egreso</button>
+                    <button onclick="abrir_modal_crear_ingreso()">Crear ingreso</button>
+                    <button onclick="abrir_modal_crear_egreso()">Crear egreso</button>
                 </div>
-                <div>Ver registro completo de transaccines</div>
+                <div><a href="../html/gestiontransaccionestodo.html">Ver registro completo de transaccines</a></div>
             </div>
             <div>
-                <table id="tabla_gestion_transacciones">
+                <table id="tabla_gestion_transacciones" border="1">
                     <caption>
                         <th>
                             <td>
@@ -84,9 +85,173 @@
                         </th>
                     </caption>
                 </table>
+
             </div>
         </div>
         
     </div>
+    <dialog id="modal_crear_ingreso">
+        <div>
+            <select name="" id="input_numero_cuenta_crear_ingreso"></select>
+            
+
+        </div>
+        <div>
+            <input type="date" id="input_date_crear_ingreso">
+            
+        </div>
+        <div>
+            <input type="number" placeholder="Valor" id="input_valor_crear_ingreso">
+        </div>
+        <div>
+            <select name="" id="nombre_tipo_ingreso"></select>
+        </div>
+        <div>
+            <textarea name="" id="input_descripcion_ingreso" cols="30" rows="10" placeholder="Descripción"></textarea>
+        </div>
+        <div>
+            <script>
+            window.addEventListener('load', function() {
+                document.querySelector("#file_ingreso").addEventListener('change', function() {
+                    
+                        var img = document.querySelector('#img_ingreso');
+              
+                  
+                       img.src = URL.createObjectURL(this.files[0]);
+                       console.log(img.src)
+                 });
+               });
+                
+                      
+                  </script>
+                  <input type='file' id="file_ingreso"/>
+                  <br><img id="img_ingreso" src="#">
+        </div>
+        <div>
+            <button onclick="crear_transaccion_ingreso()">Crear transacción</button>
+            <button onclick="cerrar_modal_crear_ingreso()">Salir</button>
+        </div>
+        
+    </dialog>
+    <dialog id="modal_crear_egreso">
+        <div>
+            <select name="" id="input_numero_cuenta_crear_egreso"></select>
+        </div>
+        <div>
+            <input type="date" id="input_date_crear_egreso">
+            
+        </div>
+        <div>
+            <input type="number" placeholder="Valor" id="input_valor_crear_egreso">
+        </div>
+        <div>
+            <select name="" id="nombre_tipo_egreso"></select>
+        </div>
+        <div>
+            <textarea name="" id="input_descripcion_egreso" cols="30" rows="10" placeholder="Descripción"></textarea>
+        </div>
+        <div>
+            <script>
+            window.addEventListener('load', function() {
+                document.querySelector("#file_egreso").addEventListener('change', function() {
+                    
+                        var img2 = document.querySelector('#img_egreso');
+              
+                  
+                       img2.src = URL.createObjectURL(this.files[0]);
+                    
+                 });
+               });
+                
+                      
+                  </script>
+                  <input type='file' id="file_egreso"/>
+                  <br><img id="img_egreso" src="#">
+        </div>
+        <div>
+            <button onclick="crear_transaccion_egreso()">realizar transaccion</button>
+            <button onclick="cerrar_modal_crear_egreso()">salir</button>
+        </div>
+    </dialog>
+    <dialog id="modal_actualizar_egreso">
+        <div>
+            <select name="" id="input_numero_cuenta_actualizar_egreso"></select>
+        </div>
+        <div>
+            <input type="date" id="input_date_actualizar_egreso">
+            
+        </div>
+        <div>
+            <input type="number" placeholder="Valor" id="input_valor_actualizar_egreso">
+        </div>
+        <div>
+            <select name="" id="nombre_tipo_actualizar_egreso"></select>
+        </div>
+        <div>
+            <textarea name="" id="input_descripcion_egreso_actualizar" cols="30" rows="10" placeholder="Descripción"></textarea>
+        </div>
+        <div>
+            <script>
+            window.addEventListener('load', function() {
+                document.querySelector("#file_egreso_actualizar").addEventListener('change', function() {
+                    
+                        var img2 = document.querySelector('#img_egreso_actualizar');
+              
+                  
+                       img2.src = URL.createObjectURL(this.files[0]);
+                    
+                 });
+               });
+                
+                      
+                  </script>
+                  <input type='file' id="file_egreso_actualizar"/>
+                  <br><img id="img_egreso_actualizar" src="#">
+        </div>
+        <div>
+            <button onclick="actualizar_transaccion_egreso()">actualizar transaccion</button>
+            <button onclick="cerrar_modal_actualizar_egreso()">salir</button>
+        </div>
+    </dialog>
+    <dialog id="modal_actualizar_ingreso">
+        <div>
+            <select name="" id="input_numero_cuenta_actualizar_ingreso"></select>
+        </div>
+        <div>
+            <input type="date" id="input_date_actualizar_ingreso">
+            
+        </div>
+        <div>
+            <input type="number" placeholder="Valor" id="input_valor_actualizar_ingreso">
+        </div>
+        <div>
+            <select name="" id="nombre_tipo_actualizar_ingreso"></select>
+        </div>
+        <div>
+            <textarea name="" id="input_descripcion_ingreso_actualizar" cols="30" rows="10" placeholder="Descripción"></textarea>
+        </div>
+        <div>
+            <script>
+            window.addEventListener('load', function() {
+                document.querySelector("#file_ingreso_actualizar").addEventListener('change', function() {
+                    
+                        var img2 = document.querySelector('#img_ingreso_actualizar');
+              
+                  
+                       img2.src = URL.createObjectURL(this.files[0]);
+                    
+                 });
+               });
+                
+                      
+                  </script>
+                  <input type='file' id="file_ingreso_actualizar"/>
+                  <br><img id="img_ingreso_actualizar" src="#">
+        </div>
+        <div>
+            <button onclick="actualizar_transaccion_ingreso()">actualizar transaccion</button>
+            <button onclick="cerrar_modal_actualizar_ingreso()">salir</button>
+        </div>
+    </dialog>
 </body>
 </html>

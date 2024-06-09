@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/gestion_transacciones.js"></script>
+    <script src="../js/gestion_transacciones_completas.js"></script>
+</head>
+<body>
+    <div>
+        
+        <div><button><a href="../html/gestiontransacciones.html">regresar</a></button>
+            <select name="" id="select_cuenta"></select>
+            <button onclick="filtrar()">buscar</button>
+        </div>
+            <div>
+                saldo actual:
+<input type="text" disabled id="saldo_cuenta_seleccionada">
+            </div>
+           
+        
+    </div>
+    <div id="div_contenedor_general_gestion_transacciones">
+        <table>
+            <caption>
+                <th>
+                    <td>
+                        Fecha
+                    </td>
+                    <td>
+                        tipo
+                    </td>
+                    <td>
+                        Nombre de tipo
+                    </td>
+                    <td>
+                        Descripción
+                    </td>
+                    <td>
+                        Valor
+                    </td>
+                    <td>
+                        Número de cuenta
+                    </td>
+                    <td>
+                        Adjunto
+                    </td>
+                    <td>
+                        editar/borrar
+                    </td>
+                </th>
+            </caption>
+        </table>
+        <table id="tabla_gestion_transacciones_completa" border="1"></table>
+    </div>
+    <dialog id="modal_actualizar_egreso">
+        <div>
+            <select name="" id="input_numero_cuenta_actualizar_egreso"></select>
+        </div>
+        <div>
+            <input type="date" id="input_date_actualizar_egreso">
+            
+        </div>
+        <div>
+            <input type="number" placeholder="Valor" id="input_valor_actualizar_egreso">
+        </div>
+        <div>
+            <select name="" id="nombre_tipo_actualizar_egreso"></select>
+        </div>
+        <div>
+            <textarea name="" id="input_descripcion_egreso_actualizar" cols="30" rows="10" placeholder="Descripción"></textarea>
+        </div>
+        <div>
+            <script>
+            window.addEventListener('load', function() {
+                document.querySelector("#file_egreso_actualizar").addEventListener('change', function() {
+                    
+                        var img2 = document.querySelector('#img_egreso_actualizar');
+              
+                  
+                       img2.src = URL.createObjectURL(this.files[0]);
+                    
+                 });
+               });
+                
+                      
+                  </script>
+                  <input type='file' id="file_egreso_actualizar"/>
+                  <br><img id="img_egreso_actualizar" src="#">
+        </div>
+        <div>
+            <button onclick="actualizar_transaccion_egreso()">actualizar transaccion</button>
+            <button onclick="cerrar_modal_actualizar_egreso()">salir</button>
+        </div>
+    </dialog>
+    <dialog id="modal_actualizar_ingreso">
+        <div>
+            <select name="" id="input_numero_cuenta_actualizar_ingreso"></select>
+        </div>
+        <div>
+            <input type="date" id="input_date_actualizar_ingreso">
+            
+        </div>
+        <div>
+            <input type="number" placeholder="Valor" id="input_valor_actualizar_ingreso">
+        </div>
+        <div>
+            <select name="" id="nombre_tipo_actualizar_ingreso"></select>
+        </div>
+        <div>
+            <textarea name="" id="input_descripcion_ingreso_actualizar" cols="30" rows="10" placeholder="Descripción"></textarea>
+        </div>
+        <div>
+            <script>
+            window.addEventListener('load', function() {
+                document.querySelector("#file_ingreso_actualizar").addEventListener('change', function() {
+                    
+                        var img2 = document.querySelector('#img_ingreso_actualizar');
+              
+                  
+                       img2.src = URL.createObjectURL(this.files[0]);
+                    
+                 });
+               });
+                
+                      
+                  </script>
+                  <input type='file' id="file_ingreso_actualizar"/>
+                  <br><img id="img_ingreso_actualizar" src="#">
+        </div>
+        <div>
+            <button onclick="actualizar_transaccion_ingreso()">actualizar transaccion</button>
+            <button onclick="cerrar_modal_actualizar_ingreso()">salir</button>
+        </div>
+    </dialog>
+</body>
+</html>

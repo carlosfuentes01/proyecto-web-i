@@ -87,16 +87,25 @@ function actualizar_tipo() {
     var input_categoria_actualizar=document.getElementById("input_categoria_actualizar")
     var input_tipo_actualizar=document.getElementById("input_tipo_actualizar")
     var input_descripcion_actualizar=document.getElementById("input_descripcion_actualizar")
+    var lista_transacciones=JSON.parse(localStorage.getItem("json_gestion_transacciones")||"[]")
     if (input_nombre_actualizar.value=="") {
-        alert("llene los espacios vacios")
+        alert("escriba el nombre del tipo")
     }else{
-        for (let index = 0; index < tipo.length; index++) {
-            if (codigo_a_seleccionar.value==tipo[index].codigo) {
-                tipo[index].nombre_tipo=input_nombre_actualizar.value
-                tipo[index].categoria=input_categoria_actualizar.value
-                tipo[index].descripcion=input_descripcion_actualizar.value
+        
+        for (let i = 0; i < tipo.length; i++) {
+            if (codigo_a_seleccionar.value==tipo[i].codigo) {
+                for (let index = 0; index < lista_transacciones.length; index++) {
+                    if (lista_transacciones[index].tipo_ingreso_egreso==tipo[i].nombre_tipo) {
+                        lista_transacciones[index].tipo_ingreso_egreso=input_nombre_actualizar.value
+                    }
+                    
+                }
+                localStorage.setItem("json_gestion_transacciones",JSON.stringify(lista_transacciones))
+                tipo[i].nombre_tipo=input_nombre_actualizar.value
+                tipo[i].categoria=input_categoria_actualizar.value
+                tipo[i].descripcion=input_descripcion_actualizar.value
     
-                tipo[index].tipo=input_tipo_actualizar.value
+                tipo[i].tipo=input_tipo_actualizar.value
              break;   
             }
             
@@ -160,12 +169,27 @@ console.log(tipo[parseindex].codigo)
 
 }
 function borrar(codigo) {
+    var lista_transacciones=JSON.parse(localStorage.getItem("json_gestion_transacciones")||"[]")
     var tipo=JSON.parse(localStorage.getItem("json_tipo_ingreso_egreso")|| "[]")
     console.log(codigo)
+    let tipo_con_transaccion
     for (let index = 0; index < tipo.length; index++) {
         if (tipo[index].codigo==codigo ) {
-          
-            tipo.splice(index, 1)
+            for (let i = 0; i < lista_transacciones.length; i++) {
+                console.log(lista_transacciones[i].tipo_ingreso_egreso)
+                console.log(tipo[index].nombre_tipo)
+                if (lista_transacciones[i].tipo_ingreso_egreso==tipo[index].nombre_tipo) {
+                    tipo_con_transaccion=true
+                }
+                
+    
+            }
+            if (tipo_con_transaccion) {
+                alert("no se puede eliminar porque hay transacciones usando dicho tipo")
+            } else {
+                tipo.splice(index, 1)
+            }
+            
             break;
         }
     }
@@ -262,7 +286,7 @@ function crear_tipo() {
     var input_descripcion=document.getElementById("input_descripcion")
     let existente=false
     if (input_codigo.value==""||input_nombre.value=="") {
-        alert("llene los espacios vacios")
+        alert("escriba el codigo y/o el nombre del tipo")
     }else{
         if (tipo.length<1) {
         
