@@ -14,6 +14,18 @@ function ingresar_pagina_consejos() {
     window.location.href="paginaconsejos.html"
 }
 
+function ingresar_pagina_consejos02() {
+    window.location.href="consejo02.html"
+}
+
+function ingresar_pagina_consejos03() {
+    window.location.href="consejo03.html"
+}
+
+function ingresar_pagina_consejos04() {
+    window.location.href="consejo04.html"
+}
+
 function ingresar_gestion_cuentas_bancarias() {
     window.location.href="gestioncuentasbancarias.html"
 }

@@ -48,25 +48,27 @@
         </div>
 
         <div id="div_contenedor_general_cuentas_bancarias">
-            <div>
-                <button id="boton_vincular_cuenta_inside_div_contenedor_general" onclick="abrir_modal_crear()">Vincular cuenta</button>
-                <button id="boton_desvincular_cuenta_inside_div_contenedor_general" onclick="mostrar_borrar()">Desvincular cuenta</button>
-                <button id="boton_actualizar_cuenta_inside_div_contenedor_general"
+
+            <div class="div_botones_inside_contenedor_general">
+
+                <button id="boton_vincular_cuenta_inside_div_contenedor_general" class="button_inside_botones" onclick="abrir_modal_crear()">Vincular cuenta</button>
+                <button id="boton_desvincular_cuenta_inside_div_contenedor_general" class="button_inside_botones" onclick="mostrar_borrar()">Desvincular cuenta</button>
+                <button id="boton_actualizar_cuenta_inside_div_contenedor_general" class="button_inside_botones"
                 onclick="abrir_modal_actualizar()">Actualizar cuenta</button>
+
             </div>
+            
             <div>
-                <table id="tabla_gestion_cuentas_bancarias">
-                    <caption>
+                <table id="tabla_gestion_cuentas_bancarias" border="1">
+                    <caption >
                         <th>
-                            <td>
-                                Numero cuenta
-                            </td>
-                            <td>Nombre_banco</td>
-                            <td>Tipo</td>
-                            <td>Estado</td>
-                            <td>Saldo</td>
-                            <td>Fecha apertura</td>
-                            <td>Descripción</td>
+                            <td class="tb_inside_table_cuentas">Numero cuenta</td>
+                            <td class="tb_inside_table_cuentas">Nombre_banco</td>
+                            <td class="tb_inside_table_cuentas">Tipo</td>
+                            <td class="tb_inside_table_cuentas">Estado</td>
+                            <td class="tb_inside_table_cuentas">Saldo</td>
+                            <td class="tb_inside_table_cuentas">Fecha apertura</td>
+                            <td class="tb_inside_table_cuentas">Descripción</td>
                         </th>
                     </caption>
                 </table>
