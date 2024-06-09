@@ -87,20 +87,25 @@ function actualizar_tipo() {
     var input_categoria_actualizar=document.getElementById("input_categoria_actualizar")
     var input_tipo_actualizar=document.getElementById("input_tipo_actualizar")
     var input_descripcion_actualizar=document.getElementById("input_descripcion_actualizar")
-    for (let index = 0; index < tipo.length; index++) {
-        if (codigo_a_seleccionar.value==tipo[index].codigo) {
-            tipo[index].nombre_tipo=input_nombre_actualizar.value
-            tipo[index].categoria=input_categoria_actualizar.value
-            tipo[index].descripcion=input_descripcion_actualizar.value
-
-            tipo[index].tipo=input_tipo_actualizar.value
-         break;   
+    if (input_nombre_actualizar.value=="") {
+        alert("llene los espacios vacios")
+    }else{
+        for (let index = 0; index < tipo.length; index++) {
+            if (codigo_a_seleccionar.value==tipo[index].codigo) {
+                tipo[index].nombre_tipo=input_nombre_actualizar.value
+                tipo[index].categoria=input_categoria_actualizar.value
+                tipo[index].descripcion=input_descripcion_actualizar.value
+    
+                tipo[index].tipo=input_tipo_actualizar.value
+             break;   
+            }
+            
         }
-        
+        localStorage.setItem("json_tipo_ingreso_egreso",JSON.stringify(tipo))
+        cerrar_modal_actualizar()
+        window.location.href="menuadministrador.html"
     }
-    localStorage.setItem("json_tipo_ingreso_egreso",JSON.stringify(tipo))
-    cerrar_modal_actualizar()
-    window.location.href="menuadministrador.html"
+    
 
 }
 function cambiar_tipo_actualizar() {
