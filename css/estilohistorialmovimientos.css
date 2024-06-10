@@ -154,9 +154,12 @@ h2{
 }
 
 .div_general{
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 70dvh;
+    width: 95%;
+    margin-top: 10px;
+    align-items: center;
     gap: 20px;
 }
 
@@ -164,7 +167,13 @@ h2{
 
     background-color: var(--Ver_Oscuro);
     color: black ;
-    width: 400px;
+    width: 800px;
     padding: 5px;
     border-radius: 5px;
+}
+
+.div_div_transacciones{
+    display: flex;
+    justify-content: space-between;
+
 }
