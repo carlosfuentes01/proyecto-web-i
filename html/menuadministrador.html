@@ -49,25 +49,24 @@
         
     </div>
     <div>
-        <div>
-            <h2>Gestion de tipo de Ingreso y egreso</h2>
+        
+            <h2 class="h2_transacciones">Gestion de tipo de Ingreso y egreso</h2>
+        
+        <div class="div_botones">
+            <button class="boton_tipo" onclick="abrir_modal_crear()">agregar</button>
+            <button class="boton_tipo" onclick="abrir_modal_actualizar()">actualizar</button>
         </div>
-        <div>
-            <button onclick="abrir_modal_crear()">agregar</button>
-            <button onclick="abrir_modal_actualizar()">actualizar</button>
-        </div>
-        <div id="contenedor_general">
-            <table id="tabla_gestion_ingreso_egreso">
+        
+        <div  id="contenedor_general">
+            <table class="Tabla" id="tabla_gestion_ingreso_egreso">
                 <caption>
                     <th>
-                        <td>
-                            Código
-                        </td>
-                        <td>Nombre tipo</td>
-                        <td>Descripción </td>
-                        <td>Tipo</td>
-                        <td>Categoria</td>
-                        <td>Borrar</td>
+                        <td class="td_inside_table">Código</td>
+                        <td class="td_inside_table">Nombre tipo</td>
+                        <td class="td_inside_table">Descripción </td>
+                        <td class="td_inside_table">Tipo</td>
+                        <td class="td_inside_table">Categoria</td>
+                        <td class="td_inside_table">Borrar</td>
                     </th>
                 </caption>
             </table>

@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../js/botones_enlace.js"></script>
     <script src="../js/gestion_transacciones.js"></script>
+    <link rel="stylesheet" href="../css/estilotransaccioncompleta.css">
     <script src="../js/gestion_transacciones_completas.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
+    <div class="arriba">
         
-        <div><button><a href="../html/gestiontransacciones.html">regresar</a></button>
+        <div class="div_botones">
+            <button class="boton_accion" onclick=" ingresar_gestion_transacciones()">regresar</button>
+            <button class="boton_accion" onclick="filtrar()">buscar</button>
             <select name="" id="select_cuenta"></select>
-            <button onclick="filtrar()">buscar</button>
         </div>
             <div>
                 saldo actual:
@@ -22,7 +28,7 @@
         
     </div>
     <div id="div_contenedor_general_gestion_transacciones">
-        <table>
+        <table id="titulos">
             <caption>
                 <th>
                     <td>
@@ -43,7 +49,7 @@
                     <td>
                         Número de cuenta
                     </td>
-                    <td>
+                    <td >
                         Adjunto
                     </td>
                     <td>

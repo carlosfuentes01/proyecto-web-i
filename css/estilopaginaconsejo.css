@@ -180,7 +180,7 @@ body{
 .h2_inside_consejo{
     text-align: center;
     background-color: var(--ver_claro) ;
-    font-size: 40px
+    font-size: 40px;
   }
 
  
@@ -201,15 +201,18 @@ body{
     flex-direction: column;
     height: 350px;
     width: 300px;
-
     padding: 10px;
     border: 2px solid black;
     border-radius: 5px;
     align-items: center;
-    justify-content: center;
     text-align: justify;
     background-color: var(--Blanco);
 
+}
+
+.h2_titulo_inside_contenedor{
+    justify-content: center;
+    text-align: center;
 }
 
 .div_consejo03_inside_consejo{

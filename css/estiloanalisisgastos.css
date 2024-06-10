@@ -154,4 +154,16 @@ h2{
   
 }
 
+.chartjs-size-monitor{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
 
+#contenedor_general{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 70dvh;
+}
