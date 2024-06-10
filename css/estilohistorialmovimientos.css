@@ -5,6 +5,14 @@
     --ver_claro:#B4EAA9;
 
 }
+#div_contenedor_general{
+    display: flex;
+    flex-direction: column;
+}
+.div_div_transacciones{
+    display: flex;
+    gap: 5px;
+}
 .Menu_Boton{
     background-color: #F6F6F6;
     display: flex;

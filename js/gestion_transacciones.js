@@ -36,9 +36,9 @@ function read_transacciones() {
     }else{
         var tabla=document.getElementById("tabla_gestion_transacciones")
         var tamano=transacciones_del_usuario.length
-     //if (tamano>3) {
-     //        tamano=3
-    //    }
+     if (tamano>3) {
+            tamano=3
+       }
         for (let index = 0; index < tamano; index++) {
             
             var fila=tabla.insertRow(-1)
