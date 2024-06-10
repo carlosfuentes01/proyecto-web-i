@@ -15,6 +15,7 @@
 #div_contenedor_general{
     display: flex;
     flex-direction: column;
+    font-size: 20px;
 }
 .div_div_transacciones{
     display: flex;
@@ -150,4 +151,20 @@ h2{
     text-align: center;
     background-color: var(--Blanco);
   
+}
+
+.div_general{
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 50px;
+    gap: 20px;
+}
+
+.div_dia{
+
+    background-color: var(--Ver_Oscuro);
+    color: black ;
+    width: 400px;
+    padding: 5px;
+    border-radius: 5px;
 }

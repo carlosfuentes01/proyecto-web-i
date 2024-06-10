@@ -7,7 +7,7 @@
     <script src="../js/json_usuario.js"></script>
     <script src="../js/modifcar_o_borrar_usuario.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/estiloregistrarusuario.css">
+    <link rel="stylesheet" href="../css/estiloeliminarmodificarusuario.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,15 @@
     
 </head>
 <body>
+
+     <button class="Div_Registrarse_Inside_Negro" onclick="ir_principal()">devolverse</button>
+
     <div class="Div_Blanco">
 
 
         <div class="Div_Negro_Inside_Blanco">
+
+           
             
             <div class="Div_logo_Inside_Negro">
                 <img src="../recursos/imagenes/logo_cetus.png" alt="">
@@ -69,14 +74,21 @@
                             <i id="i_rebelde2" class="material-symbols-outlined">password</i>
                     </div>
                 </div>
+
+                <div class="div_botones_inside_negro">
+
+                    <button class="Div_Registrarse_Inside_Negro" onclick="abrir_modal_actualizar()">Actualizar</button>
+                    <button class="Div_Registrarse_Inside_Negro" onclick="abrir_modal_borrar()">Borrar</button>
+
+                </div>
+
+               
                 
             </div>
            
             
         </div>
-        <button onclick="abrir_modal_actualizar()">Actualizar</button>
-        <button onclick="abrir_modal_borrar()">Borrar</button>
-        <button onclick="ir_principal()">devolverse</button>
+    
         <dialog id="modal_actualizar">
             <select id="id_tipo_Input_Documento-modal_actualizar">
                 <option value="Tarjeta identidad">Tarjeta identidad</option>
