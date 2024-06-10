@@ -5,6 +5,13 @@
     --ver_claro:#B4EAA9;
 
 }
+
+* {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 550;
+    font-style: normal;
+}
+
 .Menu_Boton{
     background-color: #F6F6F6;
     display: flex;
@@ -20,6 +27,14 @@
 .Menu_Boton:first-child{
     margin-top: 30px;
 }
+
+.exit{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
 #logo_contenedor{
     margin-top: 60px;
 width: 130px;
@@ -127,4 +142,76 @@ h2{
     text-align: center;
     background-color: var(--Blanco);
   
+}
+
+.div_href_inside_transacciones{
+    justify-content: right;
+    margin: 30px;
+
+}
+
+.a_transacciones{
+
+    padding: 10px;
+    background-color: #F6F6F6;
+    height: 40px;
+    text-decoration: none;
+    color: #000;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.h2_transacciones{
+
+    background-color: var(--Ver_Oscuro);
+    color: black ;
+    width: 400px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 150px;
+
+}
+
+.tb_inside_table_cuentas{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--Ver_Oscuro);
+}
+
+td:first-child{
+ border:none;
+}
+
+td{
+    border-bottom: 5px black solid;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+
+}
+
+.div_ingreso_egreso_inside_general{
+ display: flex;
+ width: 250px;
+ gap: 10px;
+ margin: 10px;
+ margin-bottom: 50px;
+ flex-direction:column;
+}
+
+.boton_ingreso_egreso{
+    background-color: #F6F6F6;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.boton_ingreso_egreso:hover{
+    background-color: #A9E4A4;
 }

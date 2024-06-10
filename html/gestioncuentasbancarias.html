@@ -25,7 +25,10 @@
             <button onclick="ingresar_pagina_consejos()"><b>Menu Principal</b></button>
 
         </div>
-        <div class="div_izquierda_inside_superior"> <button onclick=" ingresar_pagina_inicio()"><b>Cerrar session</b></button> </div>
+        <div class="div_izquierda_inside_superior"> <div class="exit" onclick=" ingresar_pagina_inicio()">
+            <img class="imgr" src="../recursos/logos/exit.png" alt="">
+        </div> 
+     </div>
     </div>
 
     <div class="div_contenedor">
@@ -52,14 +55,27 @@
             <div class="div_botones_inside_contenedor_general">
 
                 <button id="boton_vincular_cuenta_inside_div_contenedor_general" class="button_inside_botones" onclick="abrir_modal_crear()">Vincular cuenta</button>
+                
                 <button id="boton_desvincular_cuenta_inside_div_contenedor_general" class="button_inside_botones" onclick="mostrar_borrar()">Desvincular cuenta</button>
                 <button id="boton_actualizar_cuenta_inside_div_contenedor_general" class="button_inside_botones"
                 onclick="abrir_modal_actualizar()">Actualizar cuenta</button>
 
+                <div class="circulos_contenedor">
+                                    <div class="circulos">
+                    <img src="../recursos/logos/7.png" alt="">
+                </div>
+                <div class="circulos2">
+                    <img src="../recursos/logos/8.png" alt="">
+                </div>
+                <div class="circulos3">
+                    <img src="../recursos/logos/9.png" alt="">
+                </div>
+            </div>
+
             </div>
             
-            <div>
-                <table id="tabla_gestion_cuentas_bancarias" border="1">
+            <div class="Tabla">
+                <table class="Tabla" id="tabla_gestion_cuentas_bancarias">
                     <caption >
                         <th>
                             <td class="tb_inside_table_cuentas">Numero cuenta</td>

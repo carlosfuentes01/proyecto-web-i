@@ -5,6 +5,13 @@
     --ver_claro:#B4EAA9;
 
 }
+
+* {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 550;
+    font-style: normal;
+}
+
 .Menu_Boton{
     background-color: #F6F6F6;
     display: flex;
@@ -20,6 +27,14 @@
 .Menu_Boton:first-child{
     margin-top: 30px;
 }
+
+.exit{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
 #logo_contenedor{
     margin-top: 60px;
 width: 130px;

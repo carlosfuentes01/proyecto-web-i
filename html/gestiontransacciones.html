@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <script src="../js/botones_enlace.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /> 
     <link rel="stylesheet" href="../css/estilogestiontransacciones.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,11 @@
             <button onclick="ingresar_pagina_consejos()"><b>Menu Principal</b></button>
 
         </div>
-        <div class="div_izquierda_inside_superior"> <button onclick=" ingresar_pagina_inicio()"><b>Cerrar session</b></button> </div>
+        <div class="div_izquierda_inside_superior"> <div class="exit" onclick=" ingresar_pagina_inicio()">
+            <img class="imgr" src="../recursos/logos/exit.png" alt="">
+        </div> 
+     </div>
+     
     </div>
 
     <div class="div_contenedor">
@@ -50,40 +55,32 @@
         </div>
 
         <div id="div_contenedor_general_gestion_transacciones">
-            <div>
-                <div>
-                    Transaccines cuenta
+            
+               
+                   <h2 class="h2_transacciones">gestion transacciones</h2>
+                
+                <div class="div_ingreso_egreso_inside_general">
+                    <button  class="boton_ingreso_egreso" onclick="abrir_modal_crear_ingreso()">Crear ingreso</button>
+                    <button  class="boton_ingreso_egreso" onclick="abrir_modal_crear_egreso()">Crear egreso</button>
                 </div>
-                <div>
-                    <button onclick="abrir_modal_crear_ingreso()">Crear ingreso</button>
-                    <button onclick="abrir_modal_crear_egreso()">Crear egreso</button>
-                </div>
-                <div><a href="../html/gestiontransaccionestodo.html">Ver registro completo de transaccines</a></div>
-            </div>
+
+                <div class="div_href_inside_transacciones"><a href="../html/gestiontransaccionestodo.html" class="a_transacciones">Ver registro completo de transaccines</a></div>
+
+           
             <div>
-                <table id="tabla_gestion_transacciones" border="1">
+                <table id="tabla_gestion_transacciones">
+
                     <caption>
                         <th>
-                            <td>
-                                Fecha
-                            </td>
-                            <td>
-                                Tipo_transaccion
-                            </td>
-                            <td>
-                                Descripción
-                            </td>
-                            <td>
-                                Valor
-                            </td>
-                            <td>
-                                Número de cuenta
-                            </td>
-                            <td>
-                                editar/borrar
-                            </td>
+                            <td class="tb_inside_table_cuentas">Fecha</td>
+                            <td class="tb_inside_table_cuentas">Tipo_transaccion</td>
+                            <td class="tb_inside_table_cuentas">Descripción</td>
+                            <td class="tb_inside_table_cuentas">Valor</td>
+                            <td class="tb_inside_table_cuentas">Número de cuenta</td>
+                            <td class="tb_inside_table_cuentas">Editar/borrar</td>
                         </th>
                     </caption>
+
                 </table>
 
             </div>
