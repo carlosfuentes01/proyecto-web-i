@@ -130,6 +130,7 @@ function grafica() {
                 }]
             },
             options:{
+                maintainAspectRatio:false,
                 scales:{
                     yAxes:[{
                             ticks:{
