@@ -4,7 +4,20 @@
     --Blanco: white ;
     --ver_claro:#B4EAA9;
 
+
 }
+.contenedor_imagen{
+    width: 400px;
+    height: 300px;
+    display: flex;
+}
+#myChart{
+    width:0%;
+    height: 0%;
+    flex-grow: 1;
+}
+
+
 .Menu_Boton{
     background-color: #F6F6F6;
     display: flex;

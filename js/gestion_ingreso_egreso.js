@@ -2,15 +2,36 @@ var usuario=JSON.parse(localStorage.getItem("num_cuenta_actual"))
 var categorias_ingreso=["trabajo","inversiones","prestamos"]
 var categorias_egreso=["alimentación","transporte","entretenimiento"]
 window.onload=function () {
-    colocar_nombre()
+    default_tipos() 
+        colocar_nombre()
     read_tipo_ingreso_egreso()
+       
 }
+function default_tipos() {
+    var defaults=JSON.parse(localStorage.getItem("json_tipo_ingreso_egreso")|| "[]")
+       var default1= new tipo_de_ingreso_egreso("a100","cena lujosa","alimentación","descripción","egreso")
+       var default2= new tipo_de_ingreso_egreso("a101","pago bus","transporte","descripción","egreso")
+       var default3= new tipo_de_ingreso_egreso("a102","pago Netflix","entretenimiento","descripción","egreso")
+
+       var default4= new tipo_de_ingreso_egreso("b100","Sueldo","trabajo","descripción","ingreso")
+       var default5= new tipo_de_ingreso_egreso("b101","Acciones de cecar","inversiones","descripción","ingreso")
+       var default6= new tipo_de_ingreso_egreso("b102","Prestamo de banco","prestamos","descripción","ingreso")
+       if (defaults.length==0) {
+        defaults.push(default1)
+        defaults.push(default2)
+        defaults.push(default3)
+        defaults.push(default4)
+        defaults.push(default5)
+        defaults.push(default6)
+        localStorage.setItem("json_tipo_ingreso_egreso",JSON.stringify(defaults))
+       }
+        
+}
+
 function colocar_nombre() {
     document.querySelector("#nombre_usuario_inside_div_superior_derecha_inside_div_superior").innerHTML=usuario.nombre+" "+usuario.apellido
 }
 function read_tipo_ingreso_egreso() {
-   
- 
     var tipo=JSON.parse(localStorage.getItem("json_tipo_ingreso_egreso")|| "[]")
      if (tipo.length==0) {
          var vacio=document.createElement("div")

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>analisis de gastos</title>
     <script src="../js/analisis_gastos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
 </head>
 
 <body>
@@ -50,8 +51,21 @@
 
         </div>
 
-        <div>
+        <div id="contenedor_general">
+            <div>Porcentajes de egresos por tipos de transacciones</div>
+            <div class="contenedor_imagen">
+                <canvas id="myChart" width="100px" height="200px">
 
+                </canvas>
+            </div>
+            <div>
+                <div>Egresos totales
+                    <input type="text" disabled id="egresos_totales">
+                </div>
+                <div>Saldo restante
+                    <input type="text" disabled id="saldo_restante">
+                </div>
+            </div>
         </div>
 
     </div>

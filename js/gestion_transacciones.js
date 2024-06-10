@@ -155,25 +155,30 @@ console.log(lista_transacciones[indice_actualizar].cuenta_bancaria_relacionada)
 if (input_valor_actualizar_egreso.value=="") {
    alert("escriba el valor") 
 }else{
-    for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
-        if (usuario.email==lista_cuentas_bancarias[index].email) {
-            if (lista_cuentas_bancarias[index].numero_de_cuenta==lista_transacciones[indice_actualizar].cuenta_bancaria_relacionada) {
-                var saldo_anterior=lista_cuentas_bancarias[index].saldo
-                lista_cuentas_bancarias[index].saldo=(saldo_anterior-input_valor_actualizar_egreso.value+(lista_transacciones[indice_actualizar].valor_transaccion*1))-1+1
-                localStorage.setItem("json_gestion_cuentas_bancarias",JSON.stringify(lista_cuentas_bancarias))
+    if (parseInt(input_valor_actualizar_egreso.value,10)>0) {
+        for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
+            if (usuario.email==lista_cuentas_bancarias[index].email) {
+                if (lista_cuentas_bancarias[index].numero_de_cuenta==lista_transacciones[indice_actualizar].cuenta_bancaria_relacionada) {
+                    var saldo_anterior=lista_cuentas_bancarias[index].saldo
+                    lista_cuentas_bancarias[index].saldo=(saldo_anterior-input_valor_actualizar_egreso.value+(lista_transacciones[indice_actualizar].valor_transaccion*1))-1+1
+                    localStorage.setItem("json_gestion_cuentas_bancarias",JSON.stringify(lista_cuentas_bancarias))
+                }
             }
+            
         }
-        
+        lista_transacciones[indice_actualizar].tipo_transaccion="egreso"
+        lista_transacciones[indice_actualizar].tipo_ingreso_egreso=nombre_tipo_actualizar_egreso.value
+        lista_transacciones[indice_actualizar].valor_transaccion=input_valor_actualizar_egreso.value
+        lista_transacciones[indice_actualizar].cuenta_bancaria_relacionada=input_numero_cuenta_actualizar_egreso.value
+        lista_transacciones[indice_actualizar].fecha_transaccion=input_date_actualizar_egreso.value
+        lista_transacciones[indice_actualizar].descripcion=input_descripcion_egreso_actualizar.value
+        localStorage.setItem("json_gestion_transacciones",JSON.stringify(lista_transacciones))
+        modal_actualizar_egreso.close();
+        window.location.href="gestiontransacciones.html"
+    }else{
+        alert("Actualización invalida")
     }
-    lista_transacciones[indice_actualizar].tipo_transaccion="egreso"
-    lista_transacciones[indice_actualizar].tipo_ingreso_egreso=nombre_tipo_actualizar_egreso.value
-    lista_transacciones[indice_actualizar].valor_transaccion=input_valor_actualizar_egreso.value
-    lista_transacciones[indice_actualizar].cuenta_bancaria_relacionada=input_numero_cuenta_actualizar_egreso.value
-    lista_transacciones[indice_actualizar].fecha_transaccion=input_date_actualizar_egreso.value
-    lista_transacciones[indice_actualizar].descripcion=input_descripcion_egreso_actualizar.value
-    localStorage.setItem("json_gestion_transacciones",JSON.stringify(lista_transacciones))
-    modal_actualizar_egreso.close();
-    window.location.href="gestiontransacciones.html"
+    
 }
 }
 function actualizar(index) {
@@ -263,25 +268,30 @@ console.log(lista_transacciones[indice_actualizar].cuenta_bancaria_relacionada)
 if (input_valor_actualizar_ingreso.value=="") {
    alert("escriba el valor") 
 }else{
-    for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
-        if (usuario.email==lista_cuentas_bancarias[index].email) {
-            if (lista_cuentas_bancarias[index].numero_de_cuenta==lista_transacciones[indice_actualizar].cuenta_bancaria_relacionada) {
-                var saldo_anterior=lista_cuentas_bancarias[index].saldo
-                lista_cuentas_bancarias[index].saldo=(saldo_anterior+(input_valor_actualizar_ingreso.value*1)-(lista_transacciones[indice_actualizar].valor_transaccion*1))-1+1
-                localStorage.setItem("json_gestion_cuentas_bancarias",JSON.stringify(lista_cuentas_bancarias))
+    if (parseInt(input_valor_actualizar_ingreso.value,10)>0) {
+        for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
+            if (usuario.email==lista_cuentas_bancarias[index].email) {
+                if (lista_cuentas_bancarias[index].numero_de_cuenta==lista_transacciones[indice_actualizar].cuenta_bancaria_relacionada) {
+                    var saldo_anterior=lista_cuentas_bancarias[index].saldo
+                    lista_cuentas_bancarias[index].saldo=(saldo_anterior+(input_valor_actualizar_ingreso.value*1)-(lista_transacciones[indice_actualizar].valor_transaccion*1))-1+1
+                    localStorage.setItem("json_gestion_cuentas_bancarias",JSON.stringify(lista_cuentas_bancarias))
+                }
             }
+            
         }
-        
+        lista_transacciones[indice_actualizar].tipo_transaccion="ingreso"
+        lista_transacciones[indice_actualizar].tipo_ingreso_egreso=nombre_tipo_actualizar_ingreso.value
+        lista_transacciones[indice_actualizar].valor_transaccion=input_valor_actualizar_ingreso.value
+        lista_transacciones[indice_actualizar].cuenta_bancaria_relacionada=input_numero_cuenta_actualizar_ingreso.value
+        lista_transacciones[indice_actualizar].fecha_transaccion=input_date_actualizar_ingreso.value
+        lista_transacciones[indice_actualizar].descripcion=input_descripcion_ingreso_actualizar.value
+        localStorage.setItem("json_gestion_transacciones",JSON.stringify(lista_transacciones))
+        modal_actualizar_egreso.close();
+        window.location.href="gestiontransacciones.html"
+    }else{
+        alert("actualizacion invalida")
     }
-    lista_transacciones[indice_actualizar].tipo_transaccion="ingreso"
-    lista_transacciones[indice_actualizar].tipo_ingreso_egreso=nombre_tipo_actualizar_ingreso.value
-    lista_transacciones[indice_actualizar].valor_transaccion=input_valor_actualizar_ingreso.value
-    lista_transacciones[indice_actualizar].cuenta_bancaria_relacionada=input_numero_cuenta_actualizar_ingreso.value
-    lista_transacciones[indice_actualizar].fecha_transaccion=input_date_actualizar_ingreso.value
-    lista_transacciones[indice_actualizar].descripcion=input_descripcion_ingreso_actualizar.value
-    localStorage.setItem("json_gestion_transacciones",JSON.stringify(lista_transacciones))
-    modal_actualizar_egreso.close();
-    window.location.href="gestiontransacciones.html"
+    
 }
 }
 function borrar_transaccion(index) {
@@ -413,35 +423,40 @@ var delta_fechas= new Date(input_date_crear_egreso.value)
         if (delta_fechas>fecha_hoy) {
             alert("fecha invalida")
         }else{
-            var agregar_transaccion=new gestion_transacciones(usuario.email,
-                "egreso",
-                nombre_tipo_egreso.value,
-                input_valor_crear_egreso.value,
-                input_numero_cuenta_crear_egreso.value,
-                input_date_crear_egreso.value,
-                input_descripcion_egreso.value,
-                img_egreso.src)
-                lista_transacciones.push(agregar_transaccion)
-                localStorage.setItem("json_gestion_transacciones",JSON.stringify(lista_transacciones))
-                window.location.href="gestiontransacciones.html"
-                cerrar_modal_crear_egreso()
-                
-                for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
+            if (parsevalor>0) {
+                var agregar_transaccion=new gestion_transacciones(usuario.email,
+                    "egreso",
+                    nombre_tipo_egreso.value,
+                    input_valor_crear_egreso.value,
+                    input_numero_cuenta_crear_egreso.value,
+                    input_date_crear_egreso.value,
+                    input_descripcion_egreso.value,
+                    img_egreso.src)
+                    lista_transacciones.push(agregar_transaccion)
+                    localStorage.setItem("json_gestion_transacciones",JSON.stringify(lista_transacciones))
+                    window.location.href="gestiontransacciones.html"
+                    cerrar_modal_crear_egreso()
                     
-                    if (lista_cuentas_bancarias[index].email==usuario.email) {
+                    for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
                         
-                        if (lista_cuentas_bancarias[index].numero_de_cuenta==input_numero_cuenta_crear_egreso.value) {        
-
-                            var saldo_resultante=lista_cuentas_bancarias[index].saldo-parsevalor
-   
-                            lista_cuentas_bancarias[index].saldo=saldo_resultante
-                            break;
+                        if (lista_cuentas_bancarias[index].email==usuario.email) {
+                            
+                            if (lista_cuentas_bancarias[index].numero_de_cuenta==input_numero_cuenta_crear_egreso.value) {        
+    
+                                var saldo_resultante=lista_cuentas_bancarias[index].saldo-parsevalor
+       
+                                lista_cuentas_bancarias[index].saldo=saldo_resultante
+                                break;
+                            }
                         }
+                        
                     }
-                    
-                }
-                localStorage.setItem("json_gestion_cuentas_bancarias",JSON.stringify(lista_cuentas_bancarias))
-        }
+                    localStorage.setItem("json_gestion_cuentas_bancarias",JSON.stringify(lista_cuentas_bancarias))
+    
+            }else{
+                alert("transaccion invalida")
+            }
+                    }
         
 
 
@@ -467,15 +482,10 @@ function crear_transaccion_ingreso() {
     if (input_date_crear_ingreso.value==""||input_valor_crear_ingreso.value=="") {
         alert("escribar el valor y/o la fecha")
     }else{
-        var fechas_actual = Date.now();
-var fecha_hoy = new Date(fechas_actual)
-var delta_fechas= new Date(input_date_crear_ingreso.value)
-        if (delta_fechas>fecha_hoy) {
-            alert("fecha invalida")
-        }else{
+        if (parseInt(input_valor_crear_ingreso.value,10)>0) {
             var fechas_actual = Date.now();
 var fecha_hoy = new Date(fechas_actual)
-var delta_fechas= new Date(input_date_crear_egreso.value)
+var delta_fechas= new Date(input_date_crear_ingreso.value)
         if (delta_fechas>fecha_hoy) {
             alert("fecha invalida")
         }else{
@@ -507,10 +517,15 @@ var delta_fechas= new Date(input_date_crear_egreso.value)
                     
                 }
                 localStorage.setItem("json_gestion_cuentas_bancarias",JSON.stringify(lista_cuentas_bancarias))
+            
         }
+        }else{
+            alert("transaccion invalida")
+        }
+                
         
 
-    }
+    
     }
     
 }
