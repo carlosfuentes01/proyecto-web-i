@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion Alertas</title>
+    <script src="../js/json_gestion_alertas.js"></script>
     <script src="../js/gestion_alerta.js"></script>
 </head>
 
@@ -20,7 +21,8 @@
                 <img src="../recursos/imagenes/logo_cetus.png" height="50px" alt="">
             </div>
 
-            <h2 id="nombre_usuario_inside_div_superior_derecha_inside_div_superior"></h2>
+            <h2 id="nombre_usuario_inside_div_superior_derecha_inside_div_superior"
+            onclick="abrir_conf_usuario()"></h2>
 
             <button onclick="ingresar_pagina_consejos()"><b>Menu Principal</b></button>
 
@@ -52,11 +54,73 @@
 
         </div>
 
-        <div>
-
+        <div id="div_contenedor_general">
+            <div>
+                <button onclick="abrir_moda_crear()">Agregar alerta</button>
+            </div>
+            <div>
+                <table  id="tabla_alertas">
+                    <caption>
+                        <th>
+                            <td>
+                                Fecha
+                            </td>
+                            <td>
+                                Tipo alerta
+                            </td>
+                            <td>
+                                Descripción
+                            </td>
+                            <td>
+                                Opción repeticion
+                            </td>
+                            <td>
+                                editar/borrar
+                            </td>
+                        </th>
+                    </caption>
+                </table>
+            </div>
+            
         </div>
 
     </div>
+    <dialog id="modal_crear">
+        <input type="datetime-local" id="input_date-crear">
+        <select name="" id="input_tipo-crear">
+            <option value="Pago soat">Pago soat</option>
+            <option value="Recibo de agua">Recibo de agua</option>
+            <option value="Abono deuda">Abono deuda</option>
+        </select>
+        <select name="" id="input_repeticion-crear">
+            <option value="Una vez">Una vez</option>
+            <option value="Diaria">Diaria</option>
+            <option value="Semanalmente">Semanalmente</option>
+            <option value="Mensualmente">Mensualmente</option>
+            <option value="Anualmente">Anualmente</option>
+        </select>
+        <textarea name="" id="input_descripcion-crear" cols="30" rows="10"></textarea>
+        <button onclick="crear()">Crear</button>
+        <button onclick="cerrar_crear()">cancelar</button>
+    </dialog>
+    <dialog id="modal_actualizar">
+        <input type="datetime" id="input_date-actualizar">
+        <select name="" id="input_tipo-actualizar">
+            <option value="Pago soat">Pago soat</option>
+            <option value="Recibo de agua">Recibo de agua</option>
+            <option value="Abono deuda">Abono deuda</option>
+        </select>
+        <select name="" id="input_repeticion-actualizar">
+            <option value="Una vez">Una vez</option>
+            <option value="Diaria">Diaria</option>
+            <option value="Semanalmente">Semanalmente</option>
+            <option value="Mensualmente">Mensualmente</option>
+            <option value="Anualmente">Anualmente</option>
+        </select>
+        <textarea name="" id="input_descripcion-actualizar" cols="30" rows="10"></textarea>
+        <button onclick="actualizar()">Actualizar</button>
+        <button onclick="cerrar_actualizar()">cancelar</button>
+    </dialog>
 
 
 </body>

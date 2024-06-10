@@ -13,6 +13,9 @@ function ingresar_pagina_ingresar_usuario() {
 function ingresar_pagina_consejos() {
     window.location.href="paginaconsejos.html"
 }
+function abrir_conf_usuario() {
+    window.location.href="modificar_o_borrar_usuario.html"
+}  
 
 function ingresar_pagina_consejos02() {
     window.location.href="consejo02.html"

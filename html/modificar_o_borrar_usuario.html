@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Usuario</title>
+    <script src="../js/json_usuario.js"></script>
+    <script src="../js/modifcar_o_borrar_usuario.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/estiloregistrarusuario.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Varela+Round&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="Div_Blanco">
+
+
+        <div class="Div_Negro_Inside_Blanco">
+            
+            <div class="Div_logo_Inside_Negro">
+                <img src="../recursos/imagenes/logo_cetus.png" alt="">
+            </div>
+            <div class="Div_login_Inside_Negro">
+                <div class="Div_Contenedores_Inside_Negro">
+
+                    <div class="Div_Registros_Inside_Contenedores">
+                        <h3>Nombre:</h3>
+                        <input disabled id="id_Input_Name" class="Input_Inside_Registros" placeholder="Nombre" type="text">
+                        <i class="material-symbols-outlined">person</i>
+                    </div>
+                    <div class="Div_Registros_Inside_Contenedores">
+                        <h3>Apellido:</h3>
+                        <input disabled id="id_Input_Apellido" class="Input_Inside_Registros" placeholder="Apellido" type="text">
+                        <i class="material-symbols-outlined">person</i>
+                    </div>
+                </div>
+                <div class="Div_Contenedores_Inside_Negro">
+
+                    <div  class="Div_Registros_Inside_Contenedores">
+                        <h3>Correo electronico:</h3>
+                        <input id="id_Input_Email" class="Input_Inside_Registros" placeholder="Correo electronico"
+                            type="text" disabled>
+                            
+                            <i class="material-symbols-outlined">mail</i>
+                          
+                    </div>
+                    <div id="tipo" class="Div_Registros_Inside_Contenedores">
+                        <h3>Numero de documento:</h3>
+                        
+                        <input id="id_Input_NºDocumento" class="Input_Inside_Registros" placeholder="Numero de documento"
+                            type="text" disabled>
+                            <i id="i_rebelde" class="material-symbols-outlined">badge</i>
+                            
+                            <select id="id_tipo_Input_Documento" class="Input_Inside_Registros" disabled>
+                                <option value="Tarjeta identidad">Tarjeta identidad</option>
+                                <option value="Cédula">Cédula</option>
+                                <option value="Cédula extranjera">Cédula extranjera</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="Div_Contenedores_Inside_Negro">
+                    <div id="id_Div_Contraseña_Inside_Contenedores" class="Div_Registros_Inside_Contenedores">
+                        <h3>Contraseña:</h3>
+                        <input id="id_Input_Password" class="Input_Inside_Registros" placeholder="Contraseña"
+                            type="password" disabled>
+                            <i id="i_rebelde2" class="material-symbols-outlined">password</i>
+                    </div>
+                </div>
+                
+            </div>
+           
+            
+        </div>
+        <button onclick="abrir_modal_actualizar()">Actualizar</button>
+        <button onclick="abrir_modal_borrar()">Borrar</button>
+        <button onclick="ir_principal()">devolverse</button>
+        <dialog id="modal_actualizar">
+            <select id="id_tipo_Input_Documento-modal_actualizar">
+                <option value="Tarjeta identidad">Tarjeta identidad</option>
+                                <option value="Cédula">Cédula</option>
+                                <option value="Cédula extranjera">Cédula extranjera</option>
+            </select>
+            <input id="id_Input_Password-modal_actualizar" placeholder="Contraseña"
+                            type="password">
+            <input id="id_Input_Name-modal_actualizar"  placeholder="Nombre" type="text">
+
+            <input id="id_Input_Apellido-modal_actualizar" placeholder="Apellido" type="text">
+            <input id="id_Input_NºDocumento-modal_actualizar" placeholder="Numero de documento">
+            <button onclick="actualizar()">actualizar</button>
+            <button onclick="cerrar_actualizar()">cancelar</button>
+
+        </dialog>
+
+        <dialog id="modal_borrar">
+            Seguro que quiere borrar la cuenta
+            <button onclick="borrar()">si</button>
+            <button onclick="cerrar_borrar()">cancelar</button>
+        </dialog>
+</body>
+</html>
