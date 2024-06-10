@@ -332,20 +332,35 @@ function borrar_transaccion(index) {
 function abrir_modal_crear_ingreso() {
     es_ingreso=true
     var modal_crear_ingreso=document.getElementById("modal_crear_ingreso")
-    modal_crear_ingreso.showModal();
+   
     var input_numero_cuenta_crear_ingreso=document.getElementById("input_numero_cuenta_crear_ingreso")
     var nombre_tipo_ingreso=document.getElementById("nombre_tipo_ingreso")
+    var hay_cuentas_bancarias=false
     if (lista_cuentas_bancarias.length==0) {
         
     }else{
         for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
             if (usuario.email==lista_cuentas_bancarias[index].email) {
-            var option_numero=document.createElement("option")
-            option_numero.setAttribute("value",lista_cuentas_bancarias[index].numero_de_cuenta)
-            option_numero.appendChild(document.createTextNode(lista_cuentas_bancarias[index].numero_de_cuenta))
-            input_numero_cuenta_crear_ingreso.appendChild(option_numero)
+                hay_cuentas_bancarias=true;
+                break;
             }
+            
         }
+        if (hay_cuentas_bancarias) {
+            for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
+                if (usuario.email==lista_cuentas_bancarias[index].email) {
+                var option_numero=document.createElement("option")
+                option_numero.setAttribute("value",lista_cuentas_bancarias[index].numero_de_cuenta)
+                option_numero.appendChild(document.createTextNode(lista_cuentas_bancarias[index].numero_de_cuenta))
+                input_numero_cuenta_crear_ingreso.appendChild(option_numero)
+                
+                }
+            }
+            modal_crear_ingreso.showModal(); 
+        }else{
+            alert("no hay cuentas bancarias")
+        }
+        
     }
     if (tipos.length==0) {
         
@@ -370,8 +385,9 @@ function abrir_modal_crear_ingreso() {
 }
 function abrir_modal_crear_egreso() {
     es_ingreso=false
+    var cuentas_bancarias=false
     var modal_crear_egreso=document.getElementById("modal_crear_egreso")
-    modal_crear_egreso.showModal();
+    
     var input_numero_cuenta_crear_egreso=document.getElementById("input_numero_cuenta_crear_egreso")
     var nombre_tipo_egreso=document.getElementById("nombre_tipo_egreso")
     if (lista_cuentas_bancarias.length==0) {
@@ -379,12 +395,25 @@ function abrir_modal_crear_egreso() {
     }else{
         for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
             if (usuario.email==lista_cuentas_bancarias[index].email) {
-            var option_numero=document.createElement("option")
-            option_numero.setAttribute("value",lista_cuentas_bancarias[index].numero_de_cuenta)
-            option_numero.appendChild(document.createTextNode(lista_cuentas_bancarias[index].numero_de_cuenta))
-            input_numero_cuenta_crear_egreso.appendChild(option_numero)
+                cuentas_bancarias=true
+                break;
             }
         }
+        if (cuentas_bancarias) {
+            for (let index = 0; index < lista_cuentas_bancarias.length; index++) {
+                if (usuario.email==lista_cuentas_bancarias[index].email) {
+                var option_numero=document.createElement("option")
+                option_numero.setAttribute("value",lista_cuentas_bancarias[index].numero_de_cuenta)
+                option_numero.appendChild(document.createTextNode(lista_cuentas_bancarias[index].numero_de_cuenta))
+                input_numero_cuenta_crear_egreso.appendChild(option_numero)
+                
+                }
+            }
+            modal_crear_egreso.showModal();
+        }else{
+            alert("no hay cuentas bancarias")
+        }
+        
     }
     if (tipos.length==0) {
         

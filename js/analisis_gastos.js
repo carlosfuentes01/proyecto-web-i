@@ -53,8 +53,8 @@ function datos_grafica() {
     }
    }
    if (hay_valores==false) {
-        var contenedor_general=document.getElementById("contenedor_general")
-        contenedor_general.appendChild("no hay transacciones")
+        var contenedor_imagen=document.getElementById("contenedor_imagen")
+        contenedor_imagen.appendChild(document.createTextNode("no hay transacciones"))
    }else{
          
     for (let index = 0; index < lista_transacciones.length; index++) {
